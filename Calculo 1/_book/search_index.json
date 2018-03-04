@@ -1,9 +1,9 @@
 [
-["index.html", "BGuide - Cálculo 1 Capítulo 1 Introdução", " BGuide - Cálculo 1 Bruno Geronymo 2018-03-03 Capítulo 1 Introdução Sem conteúdo "],
-["sem-titulo.html", "Capítulo 2 Sem Título", " Capítulo 2 Sem Título "],
-["sem-titulo-1.html", "Capítulo 3 Sem Título", " Capítulo 3 Sem Título "],
-["sem-titulo-2.html", "Capítulo 4 Sem Título", " Capítulo 4 Sem Título "],
-["sem-titulo-3.html", "Capítulo 5 Sem Título", " Capítulo 5 Sem Título "],
-["sem-titulo-4.html", "Capítulo 6 Sem Título", " Capítulo 6 Sem Título "],
+["index.html", "BGuide - Cálculo 1 Prefácio", " BGuide - Cálculo 1 Bruno Geronymo 2018-03-04 Prefácio Este material trata-se de um manual de resoluções dos exercícios propostos no livro Um Curso de Cálculo, Volume 1 de Hamilton Luiz Guidorizzi. Ao decorrer das resoluções o material busca apresentar, adicionalmente, resoluções computacionais através do software R de computação estatística para facilitar a visualização do problema e também o aprendizado da linguagem R. O material procura abordar todos os assuntos tratados no livro do Guidorizzi, seguindo também a mesma ordem dos capítulos, para facilitar a dinâmica de pesquisa por assuntos específicos. "],
+["sem-titulo.html", "Capítulo 1 Sem Título", " Capítulo 1 Sem Título "],
+["sem-titulo-1.html", "Capítulo 2 Sem Título", " Capítulo 2 Sem Título "],
+["sem-titulo-2.html", "Capítulo 3 Sem Título", " Capítulo 3 Sem Título "],
+["sem-titulo-3.html", "Capítulo 4 Sem Título", " Capítulo 4 Sem Título "],
+["sem-titulo-4.html", "Capítulo 5 Sem Título", " Capítulo 5 Sem Título "],
 ["referencias.html", "Referências", " Referências "]
 ]
