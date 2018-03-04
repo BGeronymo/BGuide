@@ -1,0 +1,6 @@
+"0","set.seed('BGuide')
+"
+"2","NAs introduzidos por coerção"
+"2","Error in set.seed(""BGuide"") : 
+  semente especificada não é um inteiro válido
+"

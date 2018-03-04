@@ -31,6 +31,46 @@
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
 \bibliographystyle{apalike}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -136,6 +176,122 @@ do livro.
   \textbf{Irredutível}: Algo que não se pode reduzir. Uma fração é dita
   irredutível quando está em sua forma mais reduzida possível.
 \end{itemize}
+
+\section{Os Números Reais}\label{os-numeros-reais}
+
+\textbf{EXEMPLO 4.} \emph{(Página 6)} Suponha \(x \geqslant 0\) e
+\(y \geqslant 0\). Prove:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \(x \leqslant y \Rightarrow x^{2} \leqslant y^{2}\).
+\end{enumerate}
+
+~~~~~~\emph{Resolução}:
+
+\[\textrm{e} \ \left.\begin{matrix} 0 \leqslant x \leqslant y\\ 0 \leqslant x \leqslant y \end{matrix}\right\} \overset{(OM)}{\Rightarrow} \ \textrm{e} \ \left.\begin{matrix} xx \leqslant xy \\ xy \leqslant yy \end{matrix}\right\} \overset{(O3)}{\Rightarrow} xx \leqslant yy \Rightarrow x^{2} \leqslant y^{2}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Estudo por simulação:}
+
+\NormalTok{## Semente:}
+
+\KeywordTok{set.seed}\NormalTok{(}\KeywordTok{sum}\NormalTok{(}\KeywordTok{utf8ToInt}\NormalTok{(}\StringTok{"BGuide"}\NormalTok{)))}
+
+\NormalTok{## Quantidade de números a serem gerados:}
+
+\NormalTok{n <-}\StringTok{ }\DecValTok{1000000}
+
+\NormalTok{##  Gera-se aqui 'n' números aleatórios seguindo a distribuição Uniforme de}
+\NormalTok{## parâmetros 'min = 0' e 'max = 1':}
+
+\NormalTok{x <-}\StringTok{ }\KeywordTok{runif}\NormalTok{(n)}
+
+\NormalTok{##  Em seguida geramos mais 'n' números aleatórios seguindo uma distribuição}
+\NormalTok{## Uniforme de parâmetros 'min = x' e 'max = 1'. Isto faz com que todos os}
+\NormalTok{## números armazenados em y[i] sejam maiores do que os armazenados em x[i], com}
+\NormalTok{## 'i' variando de 1 a 'n'. Mas não implica que y[i] seja maior do que x[j] com}
+\NormalTok{## 'j' também variando de 1 a 'n' e 'i != j':}
+
+\NormalTok{y <-}\StringTok{ }\KeywordTok{runif}\NormalTok{(n, }\DataTypeTok{min =}\NormalTok{ x)}
+
+\NormalTok{##  Soma a quantidade de verificações onde a afirmação 'x^2 <= y^2' for}
+\NormalTok{## verdadeira:}
+
+\KeywordTok{sum}\NormalTok{(x}\OperatorTok{^}\DecValTok{2} \OperatorTok{<=}\StringTok{ }\NormalTok{y}\OperatorTok{^}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  Observe que o resultado é 1.000.000, exatamente a quantidade de números}
+\NormalTok{## uniformes no intervalo (0, 1) que foram gerados. Logo para todas as}
+\NormalTok{## simulações obteve-se 'x^2 <= y^2'.}
+
+\NormalTok{##  Obs.: O resultado obtido por simulação não prova a propriedade acima, apenas}
+\NormalTok{## cria evidências a favor dela. A simulação não é necessária aqui pois a}
+\NormalTok{## propriedade pode ser provada analiticamente.}
+\end{Highlighting}
+\end{Shaded}
+
+~
+
+\textbf{EXEMPLO 9.} \emph{(Página 10)} Resolva a inequação
+\(\frac{3x-1}{x+2} \geqslant 5\).
+
+Sendo \(x < 2\):
+
+\[\frac{3x-1}{x+2} \geqslant 5 \Leftrightarrow 3x-1 \leqslant 5(x+2).\]
+
+Então o autor pergunta: Por quê?
+
+Sabemos que \(1 < 2\), se multiplicássemos esta expressão por \(-1\) sem
+alterarmos o sentido da desigualdade teríamos \(-1 < -2\) e sabemos que
+esta afirmação não é verdadeira. Considerando \(a < 0\), se
+multiplicarmos uma desigualdade por \(a\) altera-se a sentido da
+desigualdade pois refletimos estes valores para o outro lado de um eixo
+com relação a origem a uma taxa de progressão \(\left | a \right |\).
+Porém, ao realizar este processo a direção de crescimento das unidades
+permanece a mesma (não é refletida).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Exemplo gráfico}
+
+\NormalTok{##  O gráfico a seguir tem como objetivo a visualização do que foi dito}
+\NormalTok{## anteriormente. Nele pode-se observar a propriedade 'x <= y  =>  ky <= kx'}
+\NormalTok{## quando 'k < 0'.}
+
+\NormalTok{## Cria um vetor dos valores a serem plotados:}
+\NormalTok{points <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{6}\NormalTok{, }\OperatorTok{-}\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+
+\NormalTok{## Cria gráfico unidimensional:}
+\KeywordTok{stripchart}\NormalTok{(points, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{3}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{8}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+
+\NormalTok{## Linha da origem:}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =} \DecValTok{0}\NormalTok{, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+\NormalTok{## Eixo do sistema:}
+\KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =} \OperatorTok{-}\DecValTok{8}\NormalTok{, }\DataTypeTok{y0 =} \DecValTok{1}\NormalTok{, }\DataTypeTok{x1 =} \DecValTok{4}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+\NormalTok{## Coordenadas da legenda:}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{6.007753}\NormalTok{, }\OperatorTok{-}\FloatTok{4.010723}\NormalTok{, }\FloatTok{1.992396}\NormalTok{, }\FloatTok{2.990910}\NormalTok{)}
+\NormalTok{y <-}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\FloatTok{1.05}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+
+\NormalTok{## Legenda:}
+\KeywordTok{text}\NormalTok{(x, y, }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"ky"}\NormalTok{, }\StringTok{"kx"}\NormalTok{, }\StringTok{"x"}\NormalTok{, }\StringTok{"y"}\NormalTok{), }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Calculo-1_files/figure-latex/unnamed-chunk-2-1.pdf}
 
 \chapter{Sem Título}\label{sem-titulo}
 

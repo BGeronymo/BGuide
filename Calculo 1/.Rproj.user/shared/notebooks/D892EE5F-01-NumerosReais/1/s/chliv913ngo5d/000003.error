@@ -1,0 +1,1 @@
+{"frames":[{"character_number":0,"end_character_number":0,"end_line_number":0,"file":"","func":"set.seed(\"BGuide\")","line_number":0}],"message":"Error in set.seed(\"BGuide\") : \n  semente especificada não é um inteiro válido\n"}
