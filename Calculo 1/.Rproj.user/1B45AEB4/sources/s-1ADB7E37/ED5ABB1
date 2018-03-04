@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1520128585799.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "616504568",
+    "id" : "ED5ABB1",
+    "lastKnownWriteTime" : 1520128634,
+    "last_content_update" : 1520128634242,
+    "path" : "~/Área de Trabalho/Estatística UFPR/BGuide/Calculo 1/index.Rmd",
+    "project_path" : "index.Rmd",
+    "properties" : {
+        "cursorPosition" : "14,12",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
