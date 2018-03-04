@@ -1,0 +1,10 @@
+@Book{xie2015,
+  title = {BGuide - Cálculo 1},
+  author = {Bruno Geronymo},
+  publisher = {Chapman and Hall/CRC},
+  address = {Curitiba, Paraná},
+  year = {2018},
+  edition = {1st},
+  note = {ISBN 978-1498716963},
+  url = {http://yihui.name/knitr/},
+}

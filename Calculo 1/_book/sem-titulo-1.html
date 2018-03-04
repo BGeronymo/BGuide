@@ -67,11 +67,13 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
-<li class="chapter" data-level="1" data-path="sem-titulo.html"><a href="sem-titulo.html"><i class="fa fa-check"></i><b>1</b> Sem Título</a></li>
-<li class="chapter" data-level="2" data-path="sem-titulo-1.html"><a href="sem-titulo-1.html"><i class="fa fa-check"></i><b>2</b> Sem Título</a></li>
-<li class="chapter" data-level="3" data-path="sem-titulo-2.html"><a href="sem-titulo-2.html"><i class="fa fa-check"></i><b>3</b> Sem Título</a></li>
-<li class="chapter" data-level="4" data-path="sem-titulo-3.html"><a href="sem-titulo-3.html"><i class="fa fa-check"></i><b>4</b> Sem Título</a></li>
-<li class="chapter" data-level="5" data-path="sem-titulo-4.html"><a href="sem-titulo-4.html"><i class="fa fa-check"></i><b>5</b> Sem Título</a></li>
+<li class="chapter" data-level="1" data-path="numeros-reais.html"><a href="numeros-reais.html"><i class="fa fa-check"></i><b>1</b> Números reais</a><ul>
+<li class="chapter" data-level="1.1" data-path="numeros-reais.html"><a href="numeros-reais.html#os-numeros-racionais"><i class="fa fa-check"></i><b>1.1</b> Os Números Racionais</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sem-titulo.html"><a href="sem-titulo.html"><i class="fa fa-check"></i><b>2</b> Sem Título</a></li>
+<li class="chapter" data-level="3" data-path="sem-titulo-1.html"><a href="sem-titulo-1.html"><i class="fa fa-check"></i><b>3</b> Sem Título</a></li>
+<li class="chapter" data-level="4" data-path="sem-titulo-2.html"><a href="sem-titulo-2.html"><i class="fa fa-check"></i><b>4</b> Sem Título</a></li>
+<li class="chapter" data-level="5" data-path="sem-titulo-3.html"><a href="sem-titulo-3.html"><i class="fa fa-check"></i><b>5</b> Sem Título</a></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -94,7 +96,7 @@
 
             <section class="normal" id="section-">
 <div id="sem-titulo-1" class="section level1">
-<h1><span class="header-section-number">Capítulo 2</span> Sem Título</h1>
+<h1><span class="header-section-number">Capítulo 3</span> Sem Título</h1>
 
 </div>
             </section>
@@ -133,7 +135,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-literature.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-method.Rmd",
 "text": "Edit"
 },
 "download": ["Calculo-1.pdf", "Calculo-1.epub"],
@@ -144,6 +146,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
