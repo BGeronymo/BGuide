@@ -272,7 +272,7 @@ permanece a mesma (não é refletida).
 
 \NormalTok{##  O gráfico a seguir tem como objetivo a visualização do que foi dito}
 \NormalTok{## anteriormente. Nele pode-se observar a propriedade 'x <= y  ==>  ky <= kx'}
-\NormalTok{## quando 'k < 0'. No exemplo utilizaremos 'x = 2' e 'y = 3'.}
+\NormalTok{## quando 'k < 0'. No exemplo utilizaremos 'x = 2', 'y = 3' e 'k = -2'.}
 
 \NormalTok{## Cria um vetor dos valores a serem plotados:}
 \NormalTok{xy <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
@@ -295,11 +295,11 @@ permanece a mesma (não é refletida).
 
 \NormalTok{## Retas de distância:}
 \KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =}\NormalTok{ pontos[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{], }\DataTypeTok{x1 =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, pontos[}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{]),}
-       \DataTypeTok{y0 =} \FloatTok{0.3}\NormalTok{, }\DataTypeTok{y1 =} \FloatTok{0.3}\NormalTok{,}
+       \DataTypeTok{y0 =} \FloatTok{0.4}\NormalTok{, }\DataTypeTok{y1 =} \FloatTok{0.4}\NormalTok{,}
        \DataTypeTok{angle =} \DecValTok{90}\NormalTok{, }\DataTypeTok{code =} \DecValTok{3}\NormalTok{, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
 
 \KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =}\NormalTok{ pontos[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{], }\DataTypeTok{x1 =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, pontos[}\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{]),}
-       \DataTypeTok{y0 =} \FloatTok{0.6}\NormalTok{, }\DataTypeTok{y1 =} \FloatTok{0.6}\NormalTok{,}
+       \DataTypeTok{y0 =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{y1 =} \FloatTok{0.7}\NormalTok{,}
        \DataTypeTok{angle =} \DecValTok{90}\NormalTok{, }\DataTypeTok{code =} \DecValTok{3}\NormalTok{, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
 
 \NormalTok{## Enumeração do eixo:}
@@ -308,13 +308,13 @@ permanece a mesma (não é refletida).
 \NormalTok{## Legenda:}
 \KeywordTok{text}\NormalTok{(pontos,}\DataTypeTok{labels =} \KeywordTok{rownames}\NormalTok{(pontos), }\DataTypeTok{pos =} \DecValTok{3}\NormalTok{, }\DataTypeTok{offset =} \DecValTok{1}\NormalTok{, }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
 
-\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pontos[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{rownames}\NormalTok{(pontos)[}\DecValTok{1}\NormalTok{], }\DataTypeTok{y =} \FloatTok{0.3}\NormalTok{,}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pontos[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{rownames}\NormalTok{(pontos)[}\DecValTok{1}\NormalTok{], }\DataTypeTok{y =} \FloatTok{0.4}\NormalTok{,}
      \DataTypeTok{pos =} \DecValTok{3}\NormalTok{, }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
-\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pontos[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{rownames}\NormalTok{(pontos)[}\DecValTok{2}\NormalTok{], }\DataTypeTok{y =} \FloatTok{0.6}\NormalTok{,}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pontos[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{rownames}\NormalTok{(pontos)[}\DecValTok{2}\NormalTok{], }\DataTypeTok{y =} \FloatTok{0.7}\NormalTok{,}
      \DataTypeTok{pos =} \DecValTok{3}\NormalTok{, }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
-\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pontos[}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{rownames}\NormalTok{(pontos)[}\DecValTok{3}\NormalTok{], }\DataTypeTok{y =} \FloatTok{0.3}\NormalTok{,}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pontos[}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{rownames}\NormalTok{(pontos)[}\DecValTok{3}\NormalTok{], }\DataTypeTok{y =} \FloatTok{0.4}\NormalTok{,}
      \DataTypeTok{pos =} \DecValTok{3}\NormalTok{, }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
-\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pontos[}\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{rownames}\NormalTok{(pontos)[}\DecValTok{4}\NormalTok{], }\DataTypeTok{y =} \FloatTok{0.6}\NormalTok{,}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pontos[}\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{2}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{rownames}\NormalTok{(pontos)[}\DecValTok{4}\NormalTok{], }\DataTypeTok{y =} \FloatTok{0.7}\NormalTok{,}
      \DataTypeTok{pos =} \DecValTok{3}\NormalTok{, }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
 
 \KeywordTok{text}\NormalTok{(}\DataTypeTok{y =} \DecValTok{0}\NormalTok{, }\DataTypeTok{x =}\NormalTok{ (pontos[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{pontos[}\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{])}\OperatorTok{/}\DecValTok{2}\NormalTok{,}

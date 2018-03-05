@@ -82,7 +82,7 @@ Sabemos que $1 < 2$, se multiplicássemos esta expressão por $-1$ sem alterarmo
 
 ##  O gráfico a seguir tem como objetivo a visualização do que foi dito
 ## anteriormente. Nele pode-se observar a propriedade 'x <= y  ==>  ky <= kx'
-## quando 'k < 0'. No exemplo utilizaremos 'x = 2' e 'y = 3'.
+## quando 'k < 0'. No exemplo utilizaremos 'x = 2', 'y = 3' e 'k = -2'.
 
 ## Cria um vetor dos valores a serem plotados:
 xy <- c(2, 3)
@@ -105,11 +105,11 @@ arrows(x0 = pontos[2, 1] - 2, x1 = pontos[4, 1] + 2,
 
 ## Retas de distância:
 arrows(x0 = pontos[1, 1], x1 = c(0, pontos[3, 1]),
-       y0 = 0.3, y1 = 0.3,
+       y0 = 0.4, y1 = 0.4,
        angle = 90, code = 3, col = "red", lwd = 2, length = 0.1)
 
 arrows(x0 = pontos[2, 1], x1 = c(0, pontos[4, 1]),
-       y0 = 0.6, y1 = 0.6,
+       y0 = 0.7, y1 = 0.7,
        angle = 90, code = 3, col = "red", lwd = 2, length = 0.1)
 
 ## Enumeração do eixo:
@@ -118,13 +118,13 @@ axis(side=1,seq(-7,4,1),pos=0)
 ## Legenda:
 text(pontos,labels = rownames(pontos), pos = 3, offset = 1, font = 2)
 
-text(x = pontos[1, 1]/2, labels = rownames(pontos)[1], y = 0.3,
+text(x = pontos[1, 1]/2, labels = rownames(pontos)[1], y = 0.4,
      pos = 3, font = 2)
-text(x = pontos[2, 1]/2, labels = rownames(pontos)[2], y = 0.6,
+text(x = pontos[2, 1]/2, labels = rownames(pontos)[2], y = 0.7,
      pos = 3, font = 2)
-text(x = pontos[3, 1]/2, labels = rownames(pontos)[3], y = 0.3,
+text(x = pontos[3, 1]/2, labels = rownames(pontos)[3], y = 0.4,
      pos = 3, font = 2)
-text(x = pontos[4, 1]/2, labels = rownames(pontos)[4], y = 0.6,
+text(x = pontos[4, 1]/2, labels = rownames(pontos)[4], y = 0.7,
      pos = 3, font = 2)
 
 text(y = 0, x = (pontos[2, 1] + pontos[4, 1])/2,
