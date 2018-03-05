@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2408299312",
+    "hash" : "0",
     "id" : "1B1F9E8A",
     "lastKnownWriteTime" : 1520206926,
     "last_content_update" : 1520206926394,
     "path" : "~/Área de Trabalho/Estatística UFPR/BGuide/Calculo 1/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "11,154",
-        "scrollLine" : "0"
+        "cursorPosition" : "25,34",
+        "scrollLine" : "5"
     },
     "relative_order" : 2,
     "source_on_save" : false,
