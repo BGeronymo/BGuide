@@ -107,3 +107,18 @@ y <- rep(1.05, 4)
 text(x, y, labels = c("ky", "kx", "x", "y"), col = "red", lwd = 3)
 
 ```
+
+### Exercícios Resolvidos
+
+1. Resolva a inequação.
+
+      a) $3x+3 < x+6$
+
+\begin{eqnarray}      
+      3x+3 \ (-x) &<& x+6 \ (-x) \\
+      2x+3 &<& 6 \\
+      2x+3 \ (-3) &<& 6 \ (-3) \\
+      2x &<& 3 \\
+      \frac{2x}{2} &<& \frac{3}{2} \\
+      x &<& \frac{3}{2}
+\end{eqnarray}
