@@ -21,7 +21,7 @@ b) $x \leqslant y \Rightarrow x^{2} \leqslant y^{2}$.
 
 \ \ \ \ \ \ *Resolução*:
 
-$$\textrm{e} \ \left.\begin{matrix} 0 \leqslant x \leqslant y\\ 0 \leqslant x \leqslant y \end{matrix}\right\} \overset{(OM)}{\Rightarrow} \ \textrm{e} \ \left.\begin{matrix} xx \leqslant xy \\ xy \leqslant yy \end{matrix}\right\} \overset{(O3)}{\Rightarrow} xx \leqslant yy \Rightarrow x^{2} \leqslant y^{2}$$
+$$\textrm{e} \ \left.\begin{matrix} 0 \leqslant x \leqslant y\\ 0 \leqslant x \leqslant y \end{matrix}\right\} \overset{(OM)}{\Rightarrow} \ \textrm{e} \ \left.\begin{matrix} xx \leqslant xy \\ xy \leqslant yy \end{matrix}\right\} \overset{(O3)}{\Rightarrow} xx \leqslant xy \leqslant yy \Rightarrow xx \leqslant yy \Rightarrow x^{2} \leqslant y^{2}$$
 
 ```{r include=TRUE}
 # Estudo por simulação:
@@ -78,14 +78,16 @@ Sabemos que $1 < 2$, se multiplicássemos esta expressão por $-1$ sem alterarmo
 # Exemplo gráfico
 
 ##  O gráfico a seguir tem como objetivo a visualização do que foi dito
-## anteriormente. Nele pode-se observar a propriedade 'x <= y  =>  ky <= kx'
+## anteriormente. Nele pode-se observar a propriedade 'x <= y  ==>  ky <= kx'
 ## quando 'k < 0'.
 
 ## Cria um vetor dos valores a serem plotados:
-points <- c(-6, -4, 2, 3)
+xy <- c(2, 3)
+k <- -2
+pontos <- c(k*xy, xy)
 
 ## Cria gráfico unidimensional:
-stripchart(points, col = "red", lwd = 3, xlim = c(-8, 4))
+stripchart(pontos, col = "red", lwd = 3, xlim = c(-8, 4))
 
 ## Linha da origem:
 abline(v = 0, col = "red", lwd = 2)

@@ -9,13 +9,13 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: BGeronymo/BGuide
-description: "O *BGuide - Cálculo 1* é um material de sintetização e resolução dos exercícios propostos no livro *Um Curso de Cálculo, Volume 1* de *Hamilton Luiz Guidorizzi*. Traz diversos recursos computacionais para auxiliar na visualização do problema e no aprendizado da linguagem *R*."
+description: "O *BGuide - Cálculo 1* é um material de sintetização e resolução dos exercícios propostos no livro *Um Curso de Cálculo, Volume 1, 5ª Edição* de *Hamilton Luiz Guidorizzi*. Traz diversos recursos computacionais para auxiliar na visualização do problema e no aprendizado da linguagem *R*."
 ---
 
 # Prefácio {-}
 
 Este material trata-se de um manual de resoluções dos exercícios propostos no livro
-*Um Curso de Cálculo, Volume 1* de *Hamilton Luiz Guidorizzi*. Ao decorrer das
+*Um Curso de Cálculo, Volume 1, 5ª Edição* de *Hamilton Luiz Guidorizzi*. Ao decorrer das
 resoluções o material busca apresentar, adicionalmente, resoluções
 computacionais através do software
 [R de computação estatística](https://www.r-project.org/) para facilitar a

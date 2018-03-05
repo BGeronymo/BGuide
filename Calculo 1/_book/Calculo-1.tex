@@ -146,7 +146,7 @@
 \addcontentsline{toc}{chapter}{Prefácio}
 
 Este material trata-se de um manual de resoluções dos exercícios
-propostos no livro \emph{Um Curso de Cálculo, Volume 1} de
+propostos no livro \emph{Um Curso de Cálculo, Volume 1, 5ª Edição} de
 \emph{Hamilton Luiz Guidorizzi}. Ao decorrer das resoluções o material
 busca apresentar, adicionalmente, resoluções computacionais através do
 software \href{https://www.r-project.org/}{R de computação estatística}
@@ -192,7 +192,7 @@ do livro.
 
 ~~~~~~\emph{Resolução}:
 
-\[\textrm{e} \ \left.\begin{matrix} 0 \leqslant x \leqslant y\\ 0 \leqslant x \leqslant y \end{matrix}\right\} \overset{(OM)}{\Rightarrow} \ \textrm{e} \ \left.\begin{matrix} xx \leqslant xy \\ xy \leqslant yy \end{matrix}\right\} \overset{(O3)}{\Rightarrow} xx \leqslant yy \Rightarrow x^{2} \leqslant y^{2}\]
+\[\textrm{e} \ \left.\begin{matrix} 0 \leqslant x \leqslant y\\ 0 \leqslant x \leqslant y \end{matrix}\right\} \overset{(OM)}{\Rightarrow} \ \textrm{e} \ \left.\begin{matrix} xx \leqslant xy \\ xy \leqslant yy \end{matrix}\right\} \overset{(O3)}{\Rightarrow} xx \leqslant xy \leqslant yy \Rightarrow xx \leqslant yy \Rightarrow x^{2} \leqslant y^{2}\]
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -267,14 +267,16 @@ permanece a mesma (não é refletida).
 \CommentTok{# Exemplo gráfico}
 
 \NormalTok{##  O gráfico a seguir tem como objetivo a visualização do que foi dito}
-\NormalTok{## anteriormente. Nele pode-se observar a propriedade 'x <= y  =>  ky <= kx'}
+\NormalTok{## anteriormente. Nele pode-se observar a propriedade 'x <= y  ==>  ky <= kx'}
 \NormalTok{## quando 'k < 0'.}
 
 \NormalTok{## Cria um vetor dos valores a serem plotados:}
-\NormalTok{points <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{6}\NormalTok{, }\OperatorTok{-}\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{xy <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{k <-}\StringTok{ }\OperatorTok{-}\DecValTok{2}
+\NormalTok{pontos <-}\StringTok{ }\KeywordTok{c}\NormalTok{(k}\OperatorTok{*}\NormalTok{xy, xy)}
 
 \NormalTok{## Cria gráfico unidimensional:}
-\KeywordTok{stripchart}\NormalTok{(points, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{3}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{8}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+\KeywordTok{stripchart}\NormalTok{(pontos, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{3}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{8}\NormalTok{, }\DecValTok{4}\NormalTok{))}
 
 \NormalTok{## Linha da origem:}
 \KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =} \DecValTok{0}\NormalTok{, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
