@@ -1,0 +1,7 @@
+"0","## Cria gráfico unidimensional:
+plot(pontos, bty = 'n', xaxt = 'n', yaxt = 'n', ylab = '', xlab = '',
+     xlim = c(pontos[2, 1] - 2, pontos[4, 1] + 2), pch = 19, cex = 2)
+"
+"2","Error in plot(pontos, bty = ""n"", xaxt = ""n"", yaxt = ""n"", ylab = """", xlab = """",  : 
+  objeto 'pontos' não encontrado
+"

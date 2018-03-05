@@ -97,6 +97,7 @@ rownames(pontos) <- c("kx", "ky", "x", "y")
 
 ## Cria gráfico unidimensional:
 plot(pontos, bty = 'n', xaxt = 'n', yaxt = 'n', ylab = '', xlab = '',
+     ylim = c(-1, 1),
      xlim = c(pontos[2, 1] - 2, pontos[4, 1] + 2), pch = 19, cex = 2)
 
 ## Eixo do sistema:
@@ -141,9 +142,9 @@ text(y = 0, x = (pontos[2, 1] + pontos[4, 1])/2,
       a) $3x+3 < x+6$
 
 \begin{eqnarray}      
-      3x+3 \ (-x) &<& x+6 \ (-x) \nonumber \\
+      3x+3 \ \ (-x) &<& x+6 \ \ (-x) \nonumber \\
       2x+3 &<& 6 \nonumber \\
-      2x+3 \ (-3) &<& 6 \ (-3) \nonumber \\
+      2x+3 \ \ (-3) &<& 6 \ \ (-3) \nonumber \\
       2x &<& 3 \nonumber \\
       \frac{2x}{2} &<& \frac{3}{2} \nonumber \\
       x &<& \frac{3}{2} \nonumber

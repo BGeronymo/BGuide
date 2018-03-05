@@ -216,6 +216,7 @@ pontos &lt;-<span class="st"> </span><span class="kw">cbind</span>(pontos, <span
 
 ## Cria gráfico unidimensional:
 <span class="kw">plot</span>(pontos, <span class="dt">bty =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>,
+     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>),
      <span class="dt">xlim =</span> <span class="kw">c</span>(pontos[<span class="dv">2</span>, <span class="dv">1</span>] <span class="op">-</span><span class="st"> </span><span class="dv">2</span>, pontos[<span class="dv">4</span>, <span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="dv">2</span>), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="dv">2</span>)
 
 ## Eixo do sistema:
@@ -249,7 +250,7 @@ pontos &lt;-<span class="st"> </span><span class="kw">cbind</span>(pontos, <span
 <span class="kw">text</span>(<span class="dt">y =</span> <span class="dv">0</span>, <span class="dt">x =</span> (pontos[<span class="dv">2</span>, <span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>pontos[<span class="dv">4</span>, <span class="dv">1</span>])<span class="op">/</span><span class="dv">2</span>,
      <span class="dt">labels =</span> <span class="st">&quot;Gráfico Unidimensional para Avaliação das Desigualdades&quot;</span>,
      <span class="dt">pos =</span> <span class="dv">1</span>, <span class="dt">offset =</span> <span class="dv">3</span>, <span class="dt">font =</span> <span class="dv">2</span>)</code></pre></div>
-<p><img src="Calculo-1_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="Calculo-1_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="exercicios-resolvidos" class="section level3">
 <h3><span class="header-section-number">1.2.1</span> Exercícios Resolvidos</h3>
 <ol style="list-style-type: decimal">
@@ -259,9 +260,9 @@ pontos &lt;-<span class="st"> </span><span class="kw">cbind</span>(pontos, <span
 </ol></li>
 </ol>
 <span class="math display">\[\begin{eqnarray}      
-      3x+3 \ (-x) &amp;&lt;&amp; x+6 \ (-x) \nonumber \\
+      3x+3 \ \ (-x) &amp;&lt;&amp; x+6 \ \ (-x) \nonumber \\
       2x+3 &amp;&lt;&amp; 6 \nonumber \\
-      2x+3 \ (-3) &amp;&lt;&amp; 6 \ (-3) \nonumber \\
+      2x+3 \ \ (-3) &amp;&lt;&amp; 6 \ \ (-3) \nonumber \\
       2x &amp;&lt;&amp; 3 \nonumber \\
       \frac{2x}{2} &amp;&lt;&amp; \frac{3}{2} \nonumber \\
       x &amp;&lt;&amp; \frac{3}{2} \nonumber
