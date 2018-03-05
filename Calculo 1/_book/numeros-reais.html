@@ -201,29 +201,54 @@ y &lt;-<span class="st"> </span><span class="kw">runif</span>(n, <span class="dt
 
 ##  O gráfico a seguir tem como objetivo a visualização do que foi dito
 ## anteriormente. Nele pode-se observar a propriedade &#39;x &lt;= y  ==&gt;  ky &lt;= kx&#39;
-## quando &#39;k &lt; 0&#39;.
+## quando &#39;k &lt; 0&#39;. No exemplo utilizaremos &#39;x = 2&#39; e &#39;y = 3&#39;.
 
 ## Cria um vetor dos valores a serem plotados:
 xy &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)
 k &lt;-<span class="st"> </span><span class="op">-</span><span class="dv">2</span>
 pontos &lt;-<span class="st"> </span><span class="kw">c</span>(k<span class="op">*</span>xy, xy)
 
-## Cria gráfico unidimensional:
-<span class="kw">stripchart</span>(pontos, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">8</span>, <span class="dv">4</span>),
-           <span class="dt">main =</span> <span class="st">&quot;Gráfico Unidimensional para Avaliação das Desigualdades&quot;</span>)
+## Atribui 0 aos valores de y
+pontos &lt;-<span class="st"> </span><span class="kw">cbind</span>(pontos, <span class="dv">0</span>)
 
-## Linha da origem:
-<span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+## Atribui nome às coordenadas
+<span class="kw">rownames</span>(pontos) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kx&quot;</span>, <span class="st">&quot;ky&quot;</span>, <span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>)
+
+## Cria gráfico unidimensional:
+<span class="kw">plot</span>(pontos, <span class="dt">bty =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>,
+     <span class="dt">xlim =</span> <span class="kw">c</span>(pontos[<span class="dv">2</span>, <span class="dv">1</span>] <span class="op">-</span><span class="st"> </span><span class="dv">2</span>, pontos[<span class="dv">4</span>, <span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="dv">2</span>), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="dv">2</span>)
 
 ## Eixo do sistema:
-<span class="kw">arrows</span>(<span class="dt">x0 =</span> <span class="op">-</span><span class="dv">8</span>, <span class="dt">y0 =</span> <span class="dv">1</span>, <span class="dt">x1 =</span> <span class="dv">4</span>, <span class="dt">y1 =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">arrows</span>(<span class="dt">x0 =</span> pontos[<span class="dv">2</span>, <span class="dv">1</span>] <span class="op">-</span><span class="st"> </span><span class="dv">2</span>, <span class="dt">x1 =</span> pontos[<span class="dv">4</span>, <span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="dv">2</span>,
+       <span class="dt">y0 =</span> <span class="dv">0</span>, <span class="dt">y1 =</span> <span class="dv">0</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
 
-## Coordenadas da legenda:
-x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="fl">6.007753</span>, <span class="op">-</span><span class="fl">4.010723</span>, <span class="fl">1.992396</span>, <span class="fl">2.990910</span>)
-y &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="fl">1.05</span>, <span class="dv">4</span>)
+## Retas de distância:
+<span class="kw">arrows</span>(<span class="dt">x0 =</span> pontos[<span class="dv">1</span>, <span class="dv">1</span>], <span class="dt">x1 =</span> <span class="kw">c</span>(<span class="dv">0</span>, pontos[<span class="dv">3</span>, <span class="dv">1</span>]),
+       <span class="dt">y0 =</span> <span class="fl">0.3</span>, <span class="dt">y1 =</span> <span class="fl">0.3</span>,
+       <span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">code =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
+
+<span class="kw">arrows</span>(<span class="dt">x0 =</span> pontos[<span class="dv">2</span>, <span class="dv">1</span>], <span class="dt">x1 =</span> <span class="kw">c</span>(<span class="dv">0</span>, pontos[<span class="dv">4</span>, <span class="dv">1</span>]),
+       <span class="dt">y0 =</span> <span class="fl">0.6</span>, <span class="dt">y1 =</span> <span class="fl">0.6</span>,
+       <span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">code =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
+
+## Enumeração do eixo:
+<span class="kw">axis</span>(<span class="dt">side=</span><span class="dv">1</span>,<span class="kw">seq</span>(<span class="op">-</span><span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">1</span>),<span class="dt">pos=</span><span class="dv">0</span>)
 
 ## Legenda:
-<span class="kw">text</span>(x, y, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;ky&quot;</span>, <span class="st">&quot;kx&quot;</span>, <span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">3</span>)</code></pre></div>
+<span class="kw">text</span>(pontos,<span class="dt">labels =</span> <span class="kw">rownames</span>(pontos), <span class="dt">pos =</span> <span class="dv">3</span>, <span class="dt">offset =</span> <span class="dv">1</span>, <span class="dt">font =</span> <span class="dv">2</span>)
+
+<span class="kw">text</span>(<span class="dt">x =</span> pontos[<span class="dv">1</span>, <span class="dv">1</span>]<span class="op">/</span><span class="dv">2</span>, <span class="dt">labels =</span> <span class="kw">rownames</span>(pontos)[<span class="dv">1</span>], <span class="dt">y =</span> <span class="fl">0.3</span>,
+     <span class="dt">pos =</span> <span class="dv">3</span>, <span class="dt">font =</span> <span class="dv">2</span>)
+<span class="kw">text</span>(<span class="dt">x =</span> pontos[<span class="dv">2</span>, <span class="dv">1</span>]<span class="op">/</span><span class="dv">2</span>, <span class="dt">labels =</span> <span class="kw">rownames</span>(pontos)[<span class="dv">2</span>], <span class="dt">y =</span> <span class="fl">0.6</span>,
+     <span class="dt">pos =</span> <span class="dv">3</span>, <span class="dt">font =</span> <span class="dv">2</span>)
+<span class="kw">text</span>(<span class="dt">x =</span> pontos[<span class="dv">3</span>, <span class="dv">1</span>]<span class="op">/</span><span class="dv">2</span>, <span class="dt">labels =</span> <span class="kw">rownames</span>(pontos)[<span class="dv">3</span>], <span class="dt">y =</span> <span class="fl">0.3</span>,
+     <span class="dt">pos =</span> <span class="dv">3</span>, <span class="dt">font =</span> <span class="dv">2</span>)
+<span class="kw">text</span>(<span class="dt">x =</span> pontos[<span class="dv">4</span>, <span class="dv">1</span>]<span class="op">/</span><span class="dv">2</span>, <span class="dt">labels =</span> <span class="kw">rownames</span>(pontos)[<span class="dv">4</span>], <span class="dt">y =</span> <span class="fl">0.6</span>,
+     <span class="dt">pos =</span> <span class="dv">3</span>, <span class="dt">font =</span> <span class="dv">2</span>)
+
+<span class="kw">text</span>(<span class="dt">y =</span> <span class="dv">0</span>, <span class="dt">x =</span> (pontos[<span class="dv">2</span>, <span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>pontos[<span class="dv">4</span>, <span class="dv">1</span>])<span class="op">/</span><span class="dv">2</span>,
+     <span class="dt">labels =</span> <span class="st">&quot;Gráfico Unidimensional para Avaliação das Desigualdades&quot;</span>,
+     <span class="dt">pos =</span> <span class="dv">1</span>, <span class="dt">offset =</span> <span class="dv">3</span>, <span class="dt">font =</span> <span class="dv">2</span>)</code></pre></div>
 <p><img src="Calculo-1_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <div id="exercicios-resolvidos" class="section level3">
 <h3><span class="header-section-number">1.2.1</span> Exercícios Resolvidos</h3>
