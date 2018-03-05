@@ -256,7 +256,7 @@ Então o autor pergunta: Por quê?
 Sabemos que \(1 < 2\), se multiplicássemos esta expressão por \(-1\) sem
 alterarmos o sentido da desigualdade teríamos \(-1 < -2\) e sabemos que
 esta afirmação não é verdadeira. Considerando \(a < 0\), se
-multiplicarmos uma desigualdade por \(a\) altera-se a sentido da
+multiplicarmos uma desigualdade por \(a\) altera-se o sentido da
 desigualdade pois refletimos estes valores para o outro lado de um eixo
 com relação a origem a uma taxa de progressão \(\left | a \right |\).
 Porém, ao realizar este processo a direção de crescimento das unidades
@@ -276,7 +276,8 @@ permanece a mesma (não é refletida).
 \NormalTok{pontos <-}\StringTok{ }\KeywordTok{c}\NormalTok{(k}\OperatorTok{*}\NormalTok{xy, xy)}
 
 \NormalTok{## Cria gráfico unidimensional:}
-\KeywordTok{stripchart}\NormalTok{(pontos, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{3}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{8}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+\KeywordTok{stripchart}\NormalTok{(pontos, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{3}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{8}\NormalTok{, }\DecValTok{4}\NormalTok{),}
+           \DataTypeTok{main =} \StringTok{"Gráfico Unidimensional para Avaliação das Desigualdades"}\NormalTok{)}
 
 \NormalTok{## Linha da origem:}
 \KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =} \DecValTok{0}\NormalTok{, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}

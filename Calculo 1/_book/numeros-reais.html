@@ -192,7 +192,7 @@ y &lt;-<span class="st"> </span><span class="kw">runif</span>(n, <span class="dt
 <p>Sendo <span class="math inline">\(x &lt; 2\)</span>:</p>
 <p><span class="math display">\[\frac{3x-1}{x+2} \geqslant 5 \Leftrightarrow 3x-1 \leqslant 5(x+2).\]</span></p>
 <p>Então o autor pergunta: Por quê?</p>
-<p>Sabemos que <span class="math inline">\(1 &lt; 2\)</span>, se multiplicássemos esta expressão por <span class="math inline">\(-1\)</span> sem alterarmos o sentido da desigualdade teríamos <span class="math inline">\(-1 &lt; -2\)</span> e sabemos que esta afirmação não é verdadeira. Considerando <span class="math inline">\(a &lt; 0\)</span>, se multiplicarmos uma desigualdade por <span class="math inline">\(a\)</span> altera-se a sentido da desigualdade pois refletimos estes valores para o outro lado de um eixo com relação a origem a uma taxa de progressão <span class="math inline">\(\left | a \right |\)</span>. Porém, ao realizar este processo a direção de crescimento das unidades permanece a mesma (não é refletida).</p>
+<p>Sabemos que <span class="math inline">\(1 &lt; 2\)</span>, se multiplicássemos esta expressão por <span class="math inline">\(-1\)</span> sem alterarmos o sentido da desigualdade teríamos <span class="math inline">\(-1 &lt; -2\)</span> e sabemos que esta afirmação não é verdadeira. Considerando <span class="math inline">\(a &lt; 0\)</span>, se multiplicarmos uma desigualdade por <span class="math inline">\(a\)</span> altera-se o sentido da desigualdade pois refletimos estes valores para o outro lado de um eixo com relação a origem a uma taxa de progressão <span class="math inline">\(\left | a \right |\)</span>. Porém, ao realizar este processo a direção de crescimento das unidades permanece a mesma (não é refletida).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Exemplo gráfico</span>
 
 ##  O gráfico a seguir tem como objetivo a visualização do que foi dito
@@ -205,7 +205,8 @@ k &lt;-<span class="st"> </span><span class="op">-</span><span class="dv">2</spa
 pontos &lt;-<span class="st"> </span><span class="kw">c</span>(k<span class="op">*</span>xy, xy)
 
 ## Cria gráfico unidimensional:
-<span class="kw">stripchart</span>(pontos, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">8</span>, <span class="dv">4</span>))
+<span class="kw">stripchart</span>(pontos, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">8</span>, <span class="dv">4</span>),
+           <span class="dt">main =</span> <span class="st">&quot;Gráfico Unidimensional para Avaliação das Desigualdades&quot;</span>)
 
 ## Linha da origem:
 <span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
