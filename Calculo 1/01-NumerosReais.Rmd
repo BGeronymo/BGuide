@@ -149,8 +149,8 @@ text(y = 0, x = (pontos[2, 1] + pontos[4, 1])/2,
 ```{r include=TRUE}
 # Resolução no R
 
-##  Para resolver a inequação pelo R chamaremos 'f1(x) = 3x + 3' e
-## 'f2(x) = x + 6':
+##  Para resolver a inequação pelo R consideraremos as seguintes expressões:
+## 'f1(x) = 3x + 3' e 'f2(x) = x + 6'.
 f1 <- function(x){
   3*x + 3
 }
@@ -184,6 +184,8 @@ data.frame(x, g(x))
 ## negativos. Logo os valores de x que satisfazem a inequação são dados por
 ## 'x < 1.5'
 
+# Exemplo Gráfico
+
 ##  O gráfico a seguir representa f1(x), f2(x) e g(x). Observe que para valores
 ## menores que 1.5 temos f1(x) < f2(x), para x = 1.5 temos f1(x) = f2(x) e para
 ## valores maiores que 1.5 temos f1(x) > f2(x).
@@ -192,7 +194,7 @@ data.frame(x, g(x))
 ## temos g(x) = 0 e para valores maiores que zero temos g(x) > 0.
 
 ##  Curvas:
-curve(f1, from = -3.5, to = 6.5, lwd = 2,
+curve(f1, from = -3.5, to = 6.5, xlim = c(-3.5, 7), ylim = c(-7.5, 24), lwd = 2,
       bty = 'n', xaxt = 'n', yaxt = 'n', ylab = '', xlab = '',
       main = 'Componentes da Inequação')
 curve(f2, add = TRUE, col = 2, lwd = 2)
@@ -210,9 +212,13 @@ segments(x0 = 1.5, x1 = 1.5,
 
 ##  Enumeração dos eixos:
 axis(side = 1, c(seq(-3, -1, 1), seq(1, 6, 1)), pos = 0)
-axis(side = 2, c(seq(-6, -2, 2), seq(2, 20, 2)), pos = 0)
+axis(side = 2, c(-5, 5, 10, 15), pos = 0)
 
 ##  Legenda
-legend(-3, 18, col = c(1, 2, 3), c('f1(x)', 'f2(x)', 'g(x)'),
+legend(-3.25, 19, col = c(1, 2, 3), c('f1(x)', 'f2(x)', 'g(x)'),
        lwd = 2, text.font = 2)
+
+text(x = c(6.75, 0, -0.2, 1.5), y = c(0, 23.5, -1, 15),
+     labels = c("x", "y", "0", "1.5"), font = 2)
+
 ```

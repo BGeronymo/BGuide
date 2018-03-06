@@ -25,7 +25,7 @@
 <meta name="author" content="Bruno Geronymo">
 
 
-<meta name="date" content="2018-03-05">
+<meta name="date" content="2018-03-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -264,8 +264,8 @@ pontos &lt;-<span class="st"> </span><span class="kw">cbind</span>(pontos, <span
 \end{eqnarray}\]</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Resolução no R</span>
 
-##  Para resolver a inequação pelo R chamaremos &#39;f1(x) = 3x + 3&#39; e
-## &#39;f2(x) = x + 6&#39;:
+##  Para resolver a inequação pelo R consideraremos as seguintes expressões:
+## &#39;f1(x) = 3x + 3&#39; e &#39;f2(x) = x + 6&#39;.
 f1 &lt;-<span class="st"> </span><span class="cf">function</span>(x){
   <span class="dv">3</span><span class="op">*</span>x <span class="op">+</span><span class="st"> </span><span class="dv">3</span>
 }
@@ -310,6 +310,8 @@ x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">fro
 ## negativos. Logo os valores de x que satisfazem a inequação são dados por
 ## &#39;x &lt; 1.5&#39;
 
+<span class="co"># Exemplo Gráfico</span>
+
 ##  O gráfico a seguir representa f1(x), f2(x) e g(x). Observe que para valores
 ## menores que 1.5 temos f1(x) &lt; f2(x), para x = 1.5 temos f1(x) = f2(x) e para
 ## valores maiores que 1.5 temos f1(x) &gt; f2(x).
@@ -318,7 +320,7 @@ x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">fro
 ## temos g(x) = 0 e para valores maiores que zero temos g(x) &gt; 0.
 
 ##  Curvas:
-<span class="kw">curve</span>(f1, <span class="dt">from =</span> <span class="op">-</span><span class="fl">3.5</span>, <span class="dt">to =</span> <span class="fl">6.5</span>, <span class="dt">lwd =</span> <span class="dv">2</span>,
+<span class="kw">curve</span>(f1, <span class="dt">from =</span> <span class="op">-</span><span class="fl">3.5</span>, <span class="dt">to =</span> <span class="fl">6.5</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">3.5</span>, <span class="dv">7</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">7.5</span>, <span class="dv">24</span>), <span class="dt">lwd =</span> <span class="dv">2</span>,
       <span class="dt">bty =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>,
       <span class="dt">main =</span> <span class="st">&#39;Componentes da Inequação&#39;</span>)
 <span class="kw">curve</span>(f2, <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
@@ -336,11 +338,14 @@ x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">fro
 
 ##  Enumeração dos eixos:
 <span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">1</span>)), <span class="dt">pos =</span> <span class="dv">0</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="kw">c</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">6</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>), <span class="kw">seq</span>(<span class="dv">2</span>, <span class="dv">20</span>, <span class="dv">2</span>)), <span class="dt">pos =</span> <span class="dv">0</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>), <span class="dt">pos =</span> <span class="dv">0</span>)
 
 ##  Legenda
-<span class="kw">legend</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">18</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="st">&#39;f1(x)&#39;</span>, <span class="st">&#39;f2(x)&#39;</span>, <span class="st">&#39;g(x)&#39;</span>),
-       <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">text.font =</span> <span class="dv">2</span>)</code></pre></div>
+<span class="kw">legend</span>(<span class="op">-</span><span class="fl">3.25</span>, <span class="dv">19</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="st">&#39;f1(x)&#39;</span>, <span class="st">&#39;f2(x)&#39;</span>, <span class="st">&#39;g(x)&#39;</span>),
+       <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">text.font =</span> <span class="dv">2</span>)
+
+<span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">6.75</span>, <span class="dv">0</span>, <span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.5</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">23.5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">15</span>),
+     <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;0&quot;</span>, <span class="st">&quot;1.5&quot;</span>), <span class="dt">font =</span> <span class="dv">2</span>)</code></pre></div>
 <p><img src="Calculo-1_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 
 </div>
