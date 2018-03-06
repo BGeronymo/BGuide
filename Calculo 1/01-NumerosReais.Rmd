@@ -134,19 +134,17 @@ text(y = 0, x = (pontos[2, 1] + pontos[4, 1])/2,
 
 1. Resolva a inequação.
 
-      a) $3x+3 < x+6$
-
-\begin{eqnarray}      
-      3x+3 \ \ (-x) &<& x+6 \ \ (-x) \nonumber \\
-      2x+3 &<& 6 \nonumber \\
-      2x+3 \ \ (-3) &<& 6 \ \ (-3) \nonumber \\
-      2x &<& 3 \nonumber \\
-      \frac{2x}{2} &<& \frac{3}{2} \nonumber \\
-      x &<& \frac{3}{2} \nonumber
-\end{eqnarray}
-
-
-```{r include=TRUE}
+    a) $3x+3 < x+6$
+    
+    \begin{eqnarray}
+    3x+3 \ \ (-x) &<& x+6 \ \ (-x) \nonumber \\
+    2x+3 &<& 6 \nonumber \\
+    2x+3 \ \ (-3) &<& 6 \ \ (-3) \nonumber \\
+    2x &<& 3 \nonumber \\
+    \frac{2x}{2} &<& \frac{3}{2} \nonumber \\
+    x &<& \frac{3}{2} \nonumber
+    \end{eqnarray}
+    ```{r include=TRUE}
 # Resolução no R
 
 ##  Para resolver a inequação pelo R consideraremos as seguintes expressões:
@@ -222,3 +220,15 @@ text(x = c(4.15, 0, -0.2, 1.5), y = c(0, 15.75, -1, 11),
      labels = c("x", "y", "0", "1.5"), font = 2)
 
 ```
+
+    b) $x-3 > 3x+1$
+    
+    \begin{eqnarray}
+    x-3 \ \ (-x) &>& 3x+1 \ \ (-x) \nonumber \\
+    -3 &>& 2x+1 \nonumber \\
+    -3 \ \ (-1) &>& 2x+1 \ \ (-1) \nonumber \\
+    -4 &>& 2x \nonumber \\
+    \frac{-4}{2} &>& \frac{2x}{2} \nonumber \\
+    -2 &>& x  \nonumber \\
+    x &<& -2 \nonumber
+    \end{eqnarray}

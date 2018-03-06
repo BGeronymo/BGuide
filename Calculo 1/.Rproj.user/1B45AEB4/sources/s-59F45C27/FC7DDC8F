@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1520187569479.000,
+    "created" : 1520366210269.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "948631321",
-    "id" : "D54029E5",
-    "lastKnownWriteTime" : 1520353052,
-    "last_content_update" : 1520353052271,
+    "hash" : "0",
+    "id" : "FC7DDC8F",
+    "lastKnownWriteTime" : 1520372150,
+    "last_content_update" : 1520372150532,
     "path" : "~/Área de Trabalho/Estatística UFPR/BGuide/Calculo 1/01-NumerosReais.Rmd",
     "project_path" : "01-NumerosReais.Rmd",
     "properties" : {
-        "cursorPosition" : "216,12",
-        "scrollLine" : "194"
+        "cursorPosition" : "134,23",
+        "scrollLine" : "133"
     },
-    "relative_order" : 3,
+    "relative_order" : 1,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"

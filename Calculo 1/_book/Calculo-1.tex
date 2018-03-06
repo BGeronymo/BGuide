@@ -335,16 +335,15 @@ permanece a mesma (não é refletida).
   \item
     \(3x+3 < x+6\)
   \end{enumerate}
-\end{enumerate}
 
-\begin{eqnarray}      
-      3x+3 \ \ (-x) &<& x+6 \ \ (-x) \nonumber \\
-      2x+3 &<& 6 \nonumber \\
-      2x+3 \ \ (-3) &<& 6 \ \ (-3) \nonumber \\
-      2x &<& 3 \nonumber \\
-      \frac{2x}{2} &<& \frac{3}{2} \nonumber \\
-      x &<& \frac{3}{2} \nonumber
-\end{eqnarray}
+  \begin{eqnarray}
+  3x+3 \ \ (-x) &<& x+6 \ \ (-x) \nonumber \\
+  2x+3 &<& 6 \nonumber \\
+  2x+3 \ \ (-3) &<& 6 \ \ (-3) \nonumber \\
+  2x &<& 3 \nonumber \\
+  \frac{2x}{2} &<& \frac{3}{2} \nonumber \\
+  x &<& \frac{3}{2} \nonumber
+  \end{eqnarray}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -423,20 +422,20 @@ permanece a mesma (não é refletida).
 
 \NormalTok{##  Curvas:}
 \KeywordTok{curve}\NormalTok{(f1, }\DataTypeTok{from =} \OperatorTok{-}\DecValTok{2}\NormalTok{, }\DataTypeTok{to =} \DecValTok{4}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{, }\FloatTok{4.5}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{3}\NormalTok{, }\DecValTok{16}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{,}
-      \DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{''}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{''}\NormalTok{,}
-      \DataTypeTok{main =} \StringTok{'Componentes da Inequação'}\NormalTok{)}
+  \DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{''}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{''}\NormalTok{,}
+  \DataTypeTok{main =} \StringTok{'Componentes da Inequação'}\NormalTok{)}
 \KeywordTok{curve}\NormalTok{(f2, }\DataTypeTok{from =} \OperatorTok{-}\DecValTok{2}\NormalTok{, }\DataTypeTok{to =} \DecValTok{4}\NormalTok{, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{col =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
 \KeywordTok{curve}\NormalTok{(g, }\DataTypeTok{from =} \OperatorTok{-}\DecValTok{2}\NormalTok{, }\DataTypeTok{to =} \DecValTok{4}\NormalTok{, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{col =} \DecValTok{3}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
 
 \NormalTok{##  Eixos:}
 \KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =} \OperatorTok{-}\FloatTok{2.5}\NormalTok{, }\DataTypeTok{x1 =} \DecValTok{4}\NormalTok{,}
-       \DataTypeTok{y0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
+   \DataTypeTok{y0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
 \KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{x1 =} \DecValTok{0}\NormalTok{,}
-       \DataTypeTok{y0 =} \OperatorTok{-}\DecValTok{4}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{15}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
+   \DataTypeTok{y0 =} \OperatorTok{-}\DecValTok{4}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{15}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
 
 \NormalTok{##  Ponto de intersecção:}
 \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \FloatTok{1.5}\NormalTok{, }\DataTypeTok{x1 =} \FloatTok{1.5}\NormalTok{,}
-         \DataTypeTok{y0 =} \OperatorTok{-}\DecValTok{2}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{10}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{1}\NormalTok{)}
+     \DataTypeTok{y0 =} \OperatorTok{-}\DecValTok{2}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{10}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{1}\NormalTok{)}
 
 \NormalTok{##  Enumeração dos eixos:}
 \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{, }\OperatorTok{-}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{), }\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{)), }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{)}
@@ -444,14 +443,33 @@ permanece a mesma (não é refletida).
 
 \NormalTok{##  Legenda:}
 \KeywordTok{legend}\NormalTok{(}\OperatorTok{-}\FloatTok{2.25}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\StringTok{'f1(x)'}\NormalTok{, }\StringTok{'f2(x)'}\NormalTok{, }\StringTok{'g(x)'}\NormalTok{),}
-       \DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{text.font =} \DecValTok{2}\NormalTok{)}
+   \DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{text.font =} \DecValTok{2}\NormalTok{)}
 
 \KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\FloatTok{4.15}\NormalTok{, }\DecValTok{0}\NormalTok{, }\OperatorTok{-}\FloatTok{0.2}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{15.75}\NormalTok{, }\OperatorTok{-}\DecValTok{1}\NormalTok{, }\DecValTok{11}\NormalTok{),}
-     \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"x"}\NormalTok{, }\StringTok{"y"}\NormalTok{, }\StringTok{"0"}\NormalTok{, }\StringTok{"1.5"}\NormalTok{), }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
+ \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"x"}\NormalTok{, }\StringTok{"y"}\NormalTok{, }\StringTok{"0"}\NormalTok{, }\StringTok{"1.5"}\NormalTok{), }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{Calculo-1_files/figure-latex/unnamed-chunk-5-1} \end{center}
+  \begin{center}\includegraphics{Calculo-1_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \setcounter{enumii}{1}
+  \tightlist
+  \item
+    \(x-3 > 3x+1\)
+  \end{enumerate}
+
+  \begin{eqnarray}
+  x-3 \ \ (-x) &>& 3x+1 \ \ (-x) \nonumber \\
+  -3 &>& 2x+1 \nonumber \\
+  -3 \ \ (-1) &>& 2x+1 \ \ (-1) \nonumber \\
+  -4 &>& 2x \nonumber \\
+  \frac{-4}{2} &>& \frac{2x}{2} \nonumber \\
+  -2 &>& x  \nonumber \\
+  x &<& -2 \nonumber
+  \end{eqnarray}
+\end{enumerate}
 
 \chapter{Sem Título}\label{sem-titulo}
 
