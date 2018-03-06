@@ -320,31 +320,31 @@ x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">fro
 ## temos g(x) = 0 e para valores maiores que zero temos g(x) &gt; 0.
 
 ##  Curvas:
-<span class="kw">curve</span>(f1, <span class="dt">from =</span> <span class="op">-</span><span class="fl">3.5</span>, <span class="dt">to =</span> <span class="fl">6.5</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">3.5</span>, <span class="dv">7</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">7.5</span>, <span class="dv">24</span>), <span class="dt">lwd =</span> <span class="dv">2</span>,
+<span class="kw">curve</span>(f1, <span class="dt">from =</span> <span class="op">-</span><span class="dv">2</span>, <span class="dt">to =</span> <span class="dv">4</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>, <span class="fl">4.5</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">16</span>), <span class="dt">lwd =</span> <span class="dv">2</span>,
       <span class="dt">bty =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>,
       <span class="dt">main =</span> <span class="st">&#39;Componentes da Inequação&#39;</span>)
-<span class="kw">curve</span>(f2, <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
-<span class="kw">curve</span>(g, <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">3</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">curve</span>(f2, <span class="dt">from =</span> <span class="op">-</span><span class="dv">2</span>, <span class="dt">to =</span> <span class="dv">4</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">curve</span>(g, <span class="dt">from =</span> <span class="op">-</span><span class="dv">2</span>, <span class="dt">to =</span> <span class="dv">4</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">3</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
 
 ##  Eixos:
-<span class="kw">arrows</span>(<span class="dt">x0 =</span> <span class="op">-</span><span class="fl">3.5</span>, <span class="dt">x1 =</span> <span class="fl">6.5</span>,
-       <span class="dt">y0 =</span> <span class="dv">0</span>, <span class="dt">y1 =</span> <span class="dv">0</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">arrows</span>(<span class="dt">x0 =</span> <span class="op">-</span><span class="fl">2.5</span>, <span class="dt">x1 =</span> <span class="dv">4</span>,
+       <span class="dt">y0 =</span> <span class="dv">0</span>, <span class="dt">y1 =</span> <span class="dv">0</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
 <span class="kw">arrows</span>(<span class="dt">x0 =</span> <span class="dv">0</span>, <span class="dt">x1 =</span> <span class="dv">0</span>,
-       <span class="dt">y0 =</span> <span class="op">-</span><span class="fl">7.5</span>, <span class="dt">y1 =</span> <span class="fl">22.5</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+       <span class="dt">y0 =</span> <span class="op">-</span><span class="dv">4</span>, <span class="dt">y1 =</span> <span class="dv">15</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
 
 ##  Ponto de intersecção:
 <span class="kw">segments</span>(<span class="dt">x0 =</span> <span class="fl">1.5</span>, <span class="dt">x1 =</span> <span class="fl">1.5</span>,
-         <span class="dt">y0 =</span> <span class="op">-</span><span class="dv">6</span>, <span class="dt">y1 =</span> <span class="dv">14</span>, <span class="dt">lwd =</span> <span class="dv">1</span>)
+         <span class="dt">y0 =</span> <span class="op">-</span><span class="dv">2</span>, <span class="dt">y1 =</span> <span class="dv">10</span>, <span class="dt">lwd =</span> <span class="dv">1</span>)
 
 ##  Enumeração dos eixos:
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">1</span>)), <span class="dt">pos =</span> <span class="dv">0</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>), <span class="dt">pos =</span> <span class="dv">0</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)), <span class="dt">pos =</span> <span class="dv">0</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">12</span>), <span class="dt">pos =</span> <span class="dv">0</span>)
 
-##  Legenda
-<span class="kw">legend</span>(<span class="op">-</span><span class="fl">3.25</span>, <span class="dv">19</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="st">&#39;f1(x)&#39;</span>, <span class="st">&#39;f2(x)&#39;</span>, <span class="st">&#39;g(x)&#39;</span>),
+##  Legenda:
+<span class="kw">legend</span>(<span class="op">-</span><span class="fl">2.25</span>, <span class="dv">13</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="st">&#39;f1(x)&#39;</span>, <span class="st">&#39;f2(x)&#39;</span>, <span class="st">&#39;g(x)&#39;</span>),
        <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">text.font =</span> <span class="dv">2</span>)
 
-<span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">6.75</span>, <span class="dv">0</span>, <span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.5</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">23.5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">15</span>),
+<span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">4.15</span>, <span class="dv">0</span>, <span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.5</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">15.75</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">11</span>),
      <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;0&quot;</span>, <span class="st">&quot;1.5&quot;</span>), <span class="dt">font =</span> <span class="dv">2</span>)</code></pre></div>
 <p><img src="Calculo-1_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 

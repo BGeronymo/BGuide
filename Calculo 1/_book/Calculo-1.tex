@@ -422,31 +422,31 @@ permanece a mesma (não é refletida).
 \NormalTok{## temos g(x) = 0 e para valores maiores que zero temos g(x) > 0.}
 
 \NormalTok{##  Curvas:}
-\KeywordTok{curve}\NormalTok{(f1, }\DataTypeTok{from =} \OperatorTok{-}\FloatTok{3.5}\NormalTok{, }\DataTypeTok{to =} \FloatTok{6.5}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{3.5}\NormalTok{, }\DecValTok{7}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{7.5}\NormalTok{, }\DecValTok{24}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{,}
+\KeywordTok{curve}\NormalTok{(f1, }\DataTypeTok{from =} \OperatorTok{-}\DecValTok{2}\NormalTok{, }\DataTypeTok{to =} \DecValTok{4}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{, }\FloatTok{4.5}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{3}\NormalTok{, }\DecValTok{16}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{,}
       \DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{''}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{''}\NormalTok{,}
       \DataTypeTok{main =} \StringTok{'Componentes da Inequação'}\NormalTok{)}
-\KeywordTok{curve}\NormalTok{(f2, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{col =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
-\KeywordTok{curve}\NormalTok{(g, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{col =} \DecValTok{3}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{curve}\NormalTok{(f2, }\DataTypeTok{from =} \OperatorTok{-}\DecValTok{2}\NormalTok{, }\DataTypeTok{to =} \DecValTok{4}\NormalTok{, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{col =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{curve}\NormalTok{(g, }\DataTypeTok{from =} \OperatorTok{-}\DecValTok{2}\NormalTok{, }\DataTypeTok{to =} \DecValTok{4}\NormalTok{, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{col =} \DecValTok{3}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
 
 \NormalTok{##  Eixos:}
-\KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =} \OperatorTok{-}\FloatTok{3.5}\NormalTok{, }\DataTypeTok{x1 =} \FloatTok{6.5}\NormalTok{,}
-       \DataTypeTok{y0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =} \OperatorTok{-}\FloatTok{2.5}\NormalTok{, }\DataTypeTok{x1 =} \DecValTok{4}\NormalTok{,}
+       \DataTypeTok{y0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
 \KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{x1 =} \DecValTok{0}\NormalTok{,}
-       \DataTypeTok{y0 =} \OperatorTok{-}\FloatTok{7.5}\NormalTok{, }\DataTypeTok{y1 =} \FloatTok{22.5}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+       \DataTypeTok{y0 =} \OperatorTok{-}\DecValTok{4}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{15}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
 
 \NormalTok{##  Ponto de intersecção:}
 \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \FloatTok{1.5}\NormalTok{, }\DataTypeTok{x1 =} \FloatTok{1.5}\NormalTok{,}
-         \DataTypeTok{y0 =} \OperatorTok{-}\DecValTok{6}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{14}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{1}\NormalTok{)}
+         \DataTypeTok{y0 =} \OperatorTok{-}\DecValTok{2}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{10}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{1}\NormalTok{)}
 
 \NormalTok{##  Enumeração dos eixos:}
-\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\OperatorTok{-}\DecValTok{3}\NormalTok{, }\OperatorTok{-}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{), }\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{1}\NormalTok{)), }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{)}
-\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{), }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{, }\OperatorTok{-}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{), }\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{)), }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{12}\NormalTok{), }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{)}
 
-\NormalTok{##  Legenda}
-\KeywordTok{legend}\NormalTok{(}\OperatorTok{-}\FloatTok{3.25}\NormalTok{, }\DecValTok{19}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\StringTok{'f1(x)'}\NormalTok{, }\StringTok{'f2(x)'}\NormalTok{, }\StringTok{'g(x)'}\NormalTok{),}
+\NormalTok{##  Legenda:}
+\KeywordTok{legend}\NormalTok{(}\OperatorTok{-}\FloatTok{2.25}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\StringTok{'f1(x)'}\NormalTok{, }\StringTok{'f2(x)'}\NormalTok{, }\StringTok{'g(x)'}\NormalTok{),}
        \DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{text.font =} \DecValTok{2}\NormalTok{)}
 
-\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\FloatTok{6.75}\NormalTok{, }\DecValTok{0}\NormalTok{, }\OperatorTok{-}\FloatTok{0.2}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{23.5}\NormalTok{, }\OperatorTok{-}\DecValTok{1}\NormalTok{, }\DecValTok{15}\NormalTok{),}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\FloatTok{4.15}\NormalTok{, }\DecValTok{0}\NormalTok{, }\OperatorTok{-}\FloatTok{0.2}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{15.75}\NormalTok{, }\OperatorTok{-}\DecValTok{1}\NormalTok{, }\DecValTok{11}\NormalTok{),}
      \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"x"}\NormalTok{, }\StringTok{"y"}\NormalTok{, }\StringTok{"0"}\NormalTok{, }\StringTok{"1.5"}\NormalTok{), }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
