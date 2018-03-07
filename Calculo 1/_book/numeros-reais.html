@@ -25,7 +25,7 @@
 <meta name="author" content="Bruno Geronymo">
 
 
-<meta name="date" content="2018-03-06">
+<meta name="date" content="2018-03-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -276,11 +276,12 @@ f2 &lt;-<span class="st"> </span><span class="cf">function</span>(x){
 ##  A desigualdade é &#39;f1(x) &lt; f2(x)&#39; logo &#39;f1(x) - f2(x) &lt; 0&#39;. Logo queremos os
 ## valores de x para os quais &#39;f1(x) - f2(x)&#39; seja menor que zero.
 ##  Começaremos achando a raiz da expressão &#39;f1(x) - f2(x)&#39;.
-##  A função abaixo utiliza utiliza iterações para achar a raiz em um intervalo
+##  A função abaixo utiliza iterações para achar a raiz em um intervalo
 ## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir
 ## grandes intervalos a um certo custo de tempo computacional (neste caso
 ## razoável).
-<span class="kw">uniroot</span>(<span class="cf">function</span>(x){<span class="kw">f1</span>(x) <span class="op">-</span><span class="st"> </span><span class="kw">f2</span>(x)}, <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))<span class="op">$</span>root</code></pre></div>
+r &lt;-<span class="st"> </span><span class="kw">uniroot</span>(<span class="cf">function</span>(x){<span class="kw">f1</span>(x) <span class="op">-</span><span class="st"> </span><span class="kw">f2</span>(x)}, <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))<span class="op">$</span>root
+r</code></pre></div>
 <pre><code>## [1] 1.5</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##  O resultado revela somente a raiz da função. No entanto queremos saber onde
 ## se localizam os valores positivos e negativos da função.
@@ -291,7 +292,7 @@ g &lt;-<span class="st"> </span><span class="cf">function</span>(x){
 
 ##  Sabemos que a raiz da função &#39;g(x)&#39; é 1.5, logo basta verificarmos os
 ## valores ao redor da raiz.
-x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">2</span>, <span class="dt">by =</span> <span class="fl">0.1</span>)
+x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> r <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dt">to =</span> r <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dt">by =</span> <span class="fl">0.1</span>)
 <span class="kw">data.frame</span>(x, <span class="kw">g</span>(x))</code></pre></div>
 <pre><code>##      x g.x.
 ## 1  1.0 -1.0
@@ -318,33 +319,45 @@ x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">fro
 ##  Repare também que para valores menores que zero temos g(x) &lt; 0, para x = 0
 ## temos g(x) = 0 e para valores maiores que zero temos g(x) &gt; 0.
 
+##  Vetor para determinar a amplitude do eixo das abscissas:
+v &lt;-<span class="st"> </span><span class="kw">c</span>(r <span class="op">-</span><span class="st"> </span><span class="dv">2</span>, r <span class="op">+</span><span class="st"> </span><span class="dv">2</span>)
+
+##  Determina  a amplitude do eixo das ordenadas:
+mini &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw">f1</span>(v), <span class="kw">f2</span>(v), <span class="kw">g</span>(v))
+maxi &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw">f1</span>(v), <span class="kw">f2</span>(v), <span class="kw">g</span>(v))
+
 ##  Curvas:
-<span class="kw">curve</span>(f1, <span class="dt">from =</span> <span class="op">-</span><span class="dv">2</span>, <span class="dt">to =</span> <span class="dv">4</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>, <span class="fl">4.5</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">16</span>), <span class="dt">lwd =</span> <span class="dv">2</span>,
+<span class="kw">curve</span>(f1, <span class="dt">from =</span> v[<span class="dv">1</span>], <span class="dt">to =</span> v[<span class="dv">2</span>], <span class="dt">xlim =</span> v, <span class="dt">ylim =</span> <span class="kw">c</span>(mini, maxi), <span class="dt">lwd =</span> <span class="dv">2</span>,
   <span class="dt">bty =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>,
   <span class="dt">main =</span> <span class="st">&#39;Componentes da Inequação&#39;</span>)
-<span class="kw">curve</span>(f2, <span class="dt">from =</span> <span class="op">-</span><span class="dv">2</span>, <span class="dt">to =</span> <span class="dv">4</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
-<span class="kw">curve</span>(g, <span class="dt">from =</span> <span class="op">-</span><span class="dv">2</span>, <span class="dt">to =</span> <span class="dv">4</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">3</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">curve</span>(f2, <span class="dt">from =</span> v[<span class="dv">1</span>], <span class="dt">to =</span> v[<span class="dv">2</span>], <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">curve</span>(g, <span class="dt">from =</span> v[<span class="dv">1</span>], <span class="dt">to =</span> v[<span class="dv">2</span>], <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">3</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
 
 ##  Eixos:
-<span class="kw">arrows</span>(<span class="dt">x0 =</span> <span class="op">-</span><span class="fl">2.5</span>, <span class="dt">x1 =</span> <span class="dv">4</span>,
+<span class="kw">arrows</span>(<span class="dt">x0 =</span> v[<span class="dv">1</span>], <span class="dt">x1 =</span> v[<span class="dv">2</span>],
    <span class="dt">y0 =</span> <span class="dv">0</span>, <span class="dt">y1 =</span> <span class="dv">0</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
 <span class="kw">arrows</span>(<span class="dt">x0 =</span> <span class="dv">0</span>, <span class="dt">x1 =</span> <span class="dv">0</span>,
-   <span class="dt">y0 =</span> <span class="op">-</span><span class="dv">4</span>, <span class="dt">y1 =</span> <span class="dv">15</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
+   <span class="dt">y0 =</span> mini, <span class="dt">y1 =</span> maxi, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
 
-##  Ponto de intersecção:
-<span class="kw">segments</span>(<span class="dt">x0 =</span> <span class="fl">1.5</span>, <span class="dt">x1 =</span> <span class="fl">1.5</span>,
-     <span class="dt">y0 =</span> <span class="op">-</span><span class="dv">2</span>, <span class="dt">y1 =</span> <span class="dv">10</span>, <span class="dt">lwd =</span> <span class="dv">1</span>)
+##  Comprimento da reta vertical que passa pelo ponto de intersecção:
+const &lt;-<span class="st"> </span><span class="fl">1.5</span>
+minim &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw">f1</span>(r), <span class="kw">f2</span>(r), <span class="kw">g</span>(r)) <span class="op">-</span><span class="st"> </span>const
+maxim &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw">f1</span>(r), <span class="kw">f2</span>(r), <span class="kw">g</span>(r)) <span class="op">+</span><span class="st"> </span>const
+
+##  Reta vertical que passa pelo ponto de intersecção:
+<span class="kw">segments</span>(<span class="dt">x0 =</span> r, <span class="dt">x1 =</span> r,
+     <span class="dt">y0 =</span> minim, <span class="dt">y1 =</span> maxim, <span class="dt">lwd =</span> <span class="dv">1</span>)
 
 ##  Enumeração dos eixos:
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)), <span class="dt">pos =</span> <span class="dv">0</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">12</span>), <span class="dt">pos =</span> <span class="dv">0</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, v[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dv">1</span>)), <span class="dt">hadj =</span> <span class="op">-</span><span class="dv">1</span>, <span class="dt">padj =</span> <span class="op">-</span><span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">0</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="kw">c</span>(<span class="kw">seq</span>(mini <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, maxi <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">2</span>)), <span class="dt">pos =</span> <span class="dv">0</span>)
 
 ##  Legenda:
-<span class="kw">legend</span>(<span class="op">-</span><span class="fl">2.25</span>, <span class="dv">13</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="st">&#39;f1(x)&#39;</span>, <span class="st">&#39;f2(x)&#39;</span>, <span class="st">&#39;g(x)&#39;</span>),
+<span class="kw">legend</span>(v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="fl">0.75</span>, maxi, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="st">&#39;f1(x)&#39;</span>, <span class="st">&#39;f2(x)&#39;</span>, <span class="st">&#39;g(x)&#39;</span>),
    <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">text.font =</span> <span class="dv">2</span>)
 
-<span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">4.15</span>, <span class="dv">0</span>, <span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.5</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">15.75</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">11</span>),
- <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;0&quot;</span>, <span class="st">&quot;1.5&quot;</span>), <span class="dt">font =</span> <span class="dv">2</span>)</code></pre></div>
+<span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(v[<span class="dv">2</span>], <span class="op">-</span><span class="fl">0.125</span>, r), <span class="dt">y =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, maxi, maxim <span class="op">+</span><span class="st"> </span><span class="dv">1</span>),
+ <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;1.5&quot;</span>), <span class="dt">font =</span> <span class="dv">2</span>)</code></pre></div>
 <p><img src="Calculo-1_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li><span class="math inline">\(x-3 &gt; 3x+1\)</span></li>
@@ -357,7 +370,105 @@ x-3 \ \ (-x) &amp;&gt;&amp; 3x+1 \ \ (-x) \nonumber \\
 \frac{-4}{2} &amp;&gt;&amp; \frac{2x}{2} \nonumber \\
 -2 &amp;&gt;&amp; x  \nonumber \\
 x &amp;&lt;&amp; -2 \nonumber
-\end{eqnarray}\]</span></li>
+\end{eqnarray}\]</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Resolução no R</span>
+
+##  Para resolver a inequação pelo R consideraremos as seguintes expressões:
+## &#39;f1(x) = x - 3&#39; e &#39;f2(x) = 3x + 1&#39;.
+f1 &lt;-<span class="st"> </span><span class="cf">function</span>(x){
+  x <span class="op">-</span><span class="st"> </span><span class="dv">3</span>
+}
+
+f2 &lt;-<span class="st"> </span><span class="cf">function</span>(x){
+  <span class="dv">3</span><span class="op">*</span>x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
+}
+
+##  A desigualdade é &#39;f1(x) &lt; f2(x)&#39; logo &#39;f1(x) - f2(x) &gt; 0&#39;. Logo queremos os
+## valores de x para os quais &#39;f1(x) - f2(x)&#39; seja maior que zero.
+##  Começaremos achando a raiz da expressão &#39;f1(x) - f2(x)&#39;.
+##  A função abaixo utiliza iterações para achar a raiz em um intervalo
+## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir
+## grandes intervalos a um certo custo de tempo computacional (neste caso
+## razoável).
+r &lt;-<span class="st"> </span><span class="kw">uniroot</span>(<span class="cf">function</span>(x){<span class="kw">f1</span>(x) <span class="op">-</span><span class="st"> </span><span class="kw">f2</span>(x)}, <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))<span class="op">$</span>root
+r</code></pre></div>
+<pre><code>## [1] -2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##  O resultado revela somente a raiz da função. No entanto queremos saber onde
+## se localizam os valores positivos e negativos da função.
+##  Chamaremos nessa etapa a expressão &#39;f1(x) - f2(x)&#39; de &#39;g(x)&#39;.
+g &lt;-<span class="st"> </span><span class="cf">function</span>(x){
+  <span class="kw">f1</span>(x) <span class="op">-</span><span class="st"> </span><span class="kw">f2</span>(x)
+}
+
+##  Sabemos que a raiz da função &#39;g(x)&#39; é -2, logo basta verificarmos os
+## valores ao redor da raiz.
+x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="op">-</span><span class="fl">2.5</span>, <span class="dt">to =</span> <span class="op">-</span><span class="fl">1.5</span>, <span class="dt">by =</span> <span class="fl">0.1</span>)
+<span class="kw">data.frame</span>(x, <span class="kw">g</span>(x))</code></pre></div>
+<pre><code>##       x g.x.
+## 1  -2.5  1.0
+## 2  -2.4  0.8
+## 3  -2.3  0.6
+## 4  -2.2  0.4
+## 5  -2.1  0.2
+## 6  -2.0  0.0
+## 7  -1.9 -0.2
+## 8  -1.8 -0.4
+## 9  -1.7 -0.6
+## 10 -1.6 -0.8
+## 11 -1.5 -1.0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##  Pode-se observar que para valores menores que -2, g(x) assume valores
+## positivos. Logo os valores de x que satisfazem a inequação são dados por
+## &#39;x &lt; -2&#39;
+
+<span class="co"># Exemplo Gráfico</span>
+
+##  O gráfico a seguir representa f1(x), f2(x) e g(x). Observe que para valores
+## menores que -2 temos f1(x) &gt; f2(x), para x = 1.5 temos f1(x) = f2(x) e para
+## valores maiores que -2 temos f1(x) &lt; f2(x).
+
+##  Repare também que para valores menores que zero temos g(x) &gt; 0, para x = 0
+## temos g(x) = 0 e para valores maiores que zero temos g(x) &lt; 0.
+
+##  Vetor para determinar a amplitude do eixo das abscissas:
+v &lt;-<span class="st"> </span><span class="kw">c</span>(r <span class="op">-</span><span class="st"> </span><span class="dv">3</span>, r <span class="op">+</span><span class="st"> </span><span class="dv">3</span>)
+
+##  Determina  a amplitude do eixo das ordenadas:
+mini &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw">f1</span>(v), <span class="kw">f2</span>(v), <span class="kw">g</span>(v))
+maxi &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw">f1</span>(v), <span class="kw">f2</span>(v), <span class="kw">g</span>(v))
+
+##  Curvas:
+<span class="kw">curve</span>(f1, <span class="dt">from =</span> v[<span class="dv">1</span>], <span class="dt">to =</span> v[<span class="dv">2</span>], <span class="dt">xlim =</span> v, <span class="dt">ylim =</span> <span class="kw">c</span>(mini, maxi), <span class="dt">lwd =</span> <span class="dv">2</span>,
+  <span class="dt">bty =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>,
+  <span class="dt">main =</span> <span class="st">&#39;Componentes da Inequação&#39;</span>)
+<span class="kw">curve</span>(f2, <span class="dt">from =</span> v[<span class="dv">1</span>], <span class="dt">to =</span> v[<span class="dv">2</span>], <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">curve</span>(g, <span class="dt">from =</span> v[<span class="dv">1</span>], <span class="dt">to =</span> v[<span class="dv">2</span>], <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">3</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+
+##  Eixos:
+<span class="kw">arrows</span>(<span class="dt">x0 =</span> v[<span class="dv">1</span>], <span class="dt">x1 =</span> v[<span class="dv">2</span>],
+   <span class="dt">y0 =</span> <span class="dv">0</span>, <span class="dt">y1 =</span> <span class="dv">0</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
+<span class="kw">arrows</span>(<span class="dt">x0 =</span> <span class="dv">0</span>, <span class="dt">x1 =</span> <span class="dv">0</span>,
+   <span class="dt">y0 =</span> mini, <span class="dt">y1 =</span> maxi, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
+
+##  Comprimento da reta vertical que passa pelo ponto de intersecção:
+const &lt;-<span class="st"> </span><span class="fl">1.5</span>
+minim &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw">f1</span>(r), <span class="kw">f2</span>(r), <span class="kw">g</span>(r)) <span class="op">-</span><span class="st"> </span>const
+maxim &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw">f1</span>(r), <span class="kw">f2</span>(r), <span class="kw">g</span>(r)) <span class="op">+</span><span class="st"> </span>const
+
+##  Reta vertical que passa pelo ponto de intersecção:
+<span class="kw">segments</span>(<span class="dt">x0 =</span> r, <span class="dt">x1 =</span> r,
+     <span class="dt">y0 =</span> minim, <span class="dt">y1 =</span> maxim, <span class="dt">lwd =</span> <span class="dv">1</span>)
+
+##  Enumeração dos eixos:
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, v[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dv">1</span>)), <span class="dt">hadj =</span> <span class="op">-</span><span class="fl">0.25</span>, <span class="dt">padj =</span> <span class="op">-</span><span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">0</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">4</span>, <span class="kw">c</span>(<span class="kw">seq</span>(mini <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, maxi <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">3</span>)), <span class="dt">pos =</span> <span class="dv">0</span>)
+
+##  Legenda:
+<span class="kw">legend</span>(r <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="st">&#39;f1(x)&#39;</span>, <span class="st">&#39;f2(x)&#39;</span>, <span class="st">&#39;g(x)&#39;</span>),
+   <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">text.font =</span> <span class="dv">2</span>)
+
+<span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(v[<span class="dv">2</span>], <span class="op">-</span><span class="fl">0.125</span>, r), <span class="dt">y =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, maxi, maxim <span class="op">+</span><span class="st"> </span><span class="dv">1</span>),
+ <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;1.5&quot;</span>), <span class="dt">font =</span> <span class="dv">2</span>)</code></pre></div>
+<p><img src="Calculo-1_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p></li>
 </ol>
 
 </div>
