@@ -25,7 +25,7 @@
 <meta name="author" content="Bruno Geronymo">
 
 
-<meta name="date" content="2018-03-07">
+<meta name="date" content="2018-03-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -349,8 +349,10 @@ maxim &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw"
      <span class="dt">y0 =</span> minim, <span class="dt">y1 =</span> maxim, <span class="dt">lwd =</span> <span class="dv">1</span>)
 
 ##  Enumeração dos eixos:
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, v[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dv">1</span>)), <span class="dt">hadj =</span> <span class="op">-</span><span class="dv">1</span>, <span class="dt">padj =</span> <span class="op">-</span><span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">0</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="kw">c</span>(<span class="kw">seq</span>(mini <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, maxi <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">2</span>)), <span class="dt">pos =</span> <span class="dv">0</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, v[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dv">1</span>)),
+ <span class="dt">hadj =</span> <span class="op">-</span><span class="dv">1</span>, <span class="dt">padj =</span> <span class="op">-</span><span class="fl">1.5</span>, <span class="dt">pos =</span> <span class="dv">0</span>,  <span class="dt">cex.axis =</span> <span class="fl">0.7</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="kw">c</span>(<span class="kw">seq</span>(mini <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, maxi <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">2</span>)),
+ <span class="dt">padj =</span> <span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">0</span>,  <span class="dt">cex.axis =</span> <span class="fl">0.7</span>)
 
 ##  Legenda:
 <span class="kw">legend</span>(v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="fl">0.75</span>, maxi, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="st">&#39;f1(x)&#39;</span>, <span class="st">&#39;f2(x)&#39;</span>, <span class="st">&#39;g(x)&#39;</span>),
@@ -459,8 +461,10 @@ maxim &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw"
      <span class="dt">y0 =</span> minim, <span class="dt">y1 =</span> maxim, <span class="dt">lwd =</span> <span class="dv">1</span>)
 
 ##  Enumeração dos eixos:
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, v[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dv">1</span>)), <span class="dt">hadj =</span> <span class="op">-</span><span class="fl">0.25</span>, <span class="dt">padj =</span> <span class="op">-</span><span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">0</span>)
-<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">4</span>, <span class="kw">c</span>(<span class="kw">seq</span>(mini <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, maxi <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">3</span>)), <span class="dt">pos =</span> <span class="dv">0</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, v[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dv">1</span>)),
+ <span class="dt">hadj =</span> <span class="op">-</span><span class="fl">0.25</span>, <span class="dt">padj =</span> <span class="op">-</span><span class="fl">1.5</span>, <span class="dt">pos =</span> <span class="dv">0</span>, <span class="dt">cex.axis =</span> <span class="fl">0.7</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">4</span>, <span class="kw">c</span>(<span class="kw">seq</span>(mini <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, maxi <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">3</span>)),
+ <span class="dt">padj =</span> <span class="op">-</span><span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">0</span>, <span class="dt">cex.axis =</span> <span class="fl">0.7</span>)
 
 ##  Legenda:
 <span class="kw">legend</span>(r <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="st">&#39;f1(x)&#39;</span>, <span class="st">&#39;f2(x)&#39;</span>, <span class="st">&#39;g(x)&#39;</span>),

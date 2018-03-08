@@ -222,8 +222,10 @@ segments(x0 = r, x1 = r,
          y0 = minim, y1 = maxim, lwd = 1)
 
 ##  Enumeração dos eixos:
-axis(side = 1, c(seq(v[1] + 0.5, v[2] - 0.5, 1)), hadj = -1, padj = -1, pos = 0)
-axis(side = 2, c(seq(mini + 1, maxi - 1, 2)), pos = 0)
+axis(side = 1, c(seq(v[1] + 0.5, v[2] - 0.5, 1)),
+     hadj = -1, padj = -1.5, pos = 0,  cex.axis = 0.7)
+axis(side = 2, c(seq(mini + 1, maxi - 1, 2)),
+     padj = 1, pos = 0,  cex.axis = 0.7)
 
 ##  Legenda:
 legend(v[1] + 0.75, maxi, col = c(1, 2, 3), c('f1(x)', 'f2(x)', 'g(x)'),
@@ -323,8 +325,10 @@ segments(x0 = r, x1 = r,
          y0 = minim, y1 = maxim, lwd = 1)
 
 ##  Enumeração dos eixos:
-axis(side = 1, c(seq(v[1] + 0.5, v[2] - 0.5, 1)), hadj = -0.25, padj = -1, pos = 0)
-axis(side = 4, c(seq(mini + 1, maxi - 1, 3)), pos = 0)
+axis(side = 1, c(seq(v[1] + 0.5, v[2] - 0.5, 1)),
+     hadj = -0.25, padj = -1.5, pos = 0, cex.axis = 0.7)
+axis(side = 4, c(seq(mini + 1, maxi - 1, 3)),
+     padj = -1, pos = 0, cex.axis = 0.7)
 
 ##  Legenda:
 legend(r + 0.5, -7, col = c(1, 2, 3), c('f1(x)', 'f2(x)', 'g(x)'),
