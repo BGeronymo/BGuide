@@ -419,11 +419,9 @@ permanece a mesma (não é refletida).
 \CommentTok{# Exemplo Gráfico}
 
 \NormalTok{##  O gráfico a seguir representa f1(x), f2(x) e g(x). Observe que para valores}
-\NormalTok{## menores que 1.5 temos f1(x) < f2(x), para x = 1.5 temos f1(x) = f2(x) e para}
-\NormalTok{## valores maiores que 1.5 temos f1(x) > f2(x).}
-
-\NormalTok{##  Repare também que para valores menores que zero temos g(x) < 0, para x = 0}
-\NormalTok{## temos g(x) = 0 e para valores maiores que zero temos g(x) > 0.}
+\NormalTok{## menores que 1.5 temos f1(x) < f2(x) e g(x) < 0, para x = 1.5 temos}
+\NormalTok{## f1(x) = f2(x) e g(x) = 0 e para valores maiores que 1.5 temos f1(x) > f2(x) e}
+\NormalTok{## g(x) > 0.}
 
 \NormalTok{##  Vetor para determinar a amplitude do eixo das abscissas:}
 \NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(r }\OperatorTok{-}\StringTok{ }\DecValTok{2}\NormalTok{, r }\OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{)}
@@ -534,7 +532,7 @@ permanece a mesma (não é refletida).
 
 \NormalTok{##  Sabemos que a raiz da função 'g(x)' é -2, logo basta verificarmos os}
 \NormalTok{## valores ao redor da raiz.}
-\NormalTok{x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =} \OperatorTok{-}\FloatTok{2.5}\NormalTok{, }\DataTypeTok{to =} \OperatorTok{-}\FloatTok{1.5}\NormalTok{, }\DataTypeTok{by =} \FloatTok{0.1}\NormalTok{)}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =}\NormalTok{ r }\OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{to =}\NormalTok{ r }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{by =} \FloatTok{0.1}\NormalTok{)}
 \KeywordTok{data.frame}\NormalTok{(x, }\KeywordTok{g}\NormalTok{(x))}
 \end{Highlighting}
 \end{Shaded}
@@ -563,11 +561,9 @@ permanece a mesma (não é refletida).
 \CommentTok{# Exemplo Gráfico}
 
 \NormalTok{##  O gráfico a seguir representa f1(x), f2(x) e g(x). Observe que para valores}
-\NormalTok{## menores que -2 temos f1(x) > f2(x), para x = 1.5 temos f1(x) = f2(x) e para}
-\NormalTok{## valores maiores que -2 temos f1(x) < f2(x).}
-
-\NormalTok{##  Repare também que para valores menores que zero temos g(x) > 0, para x = 0}
-\NormalTok{## temos g(x) = 0 e para valores maiores que zero temos g(x) < 0.}
+\NormalTok{## menores que -2 temos f1(x) > f2(x) e g(x) > 0, para x = 1.5 temos }
+\NormalTok{## f1(x) = f2(x) e g(x) = 0 e para valores maiores que -2 temos f1(x) < f2(x) e}
+\NormalTok{## g(x) < 0.}
 
 \NormalTok{##  Vetor para determinar a amplitude do eixo das abscissas:}
 \NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(r }\OperatorTok{-}\StringTok{ }\DecValTok{3}\NormalTok{, r }\OperatorTok{+}\StringTok{ }\DecValTok{3}\NormalTok{)}
@@ -614,6 +610,144 @@ permanece a mesma (não é refletida).
 \end{Shaded}
 
   \begin{center}\includegraphics{Calculo-1_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \setcounter{enumii}{2}
+  \tightlist
+  \item
+    \(2x-1 \geqslant 5x+3\)
+  \end{enumerate}
+
+  \begin{eqnarray}
+  2x-1 \ \ (-2x) &\geqslant& 5x+3 \ \ (-2x) \nonumber \\
+  -1 &\geqslant& 3x+3 \nonumber \\
+  -1 \ \ (-3) &\geqslant& 3x+3 \ \ (-3) \nonumber \\
+  -4 &\geqslant& 3x \nonumber \\
+  \frac{-4}{3} &\geqslant& \frac{3x}{3} \nonumber \\
+  -\frac{4}{3} &\geqslant& x \nonumber \\
+  x &\leqslant& -\frac{4}{3} \nonumber
+  \end{eqnarray}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Resolução no R}
+
+\NormalTok{##  Para resolver a inequação pelo R consideraremos as seguintes expressões:}
+\NormalTok{## 'f1(x) = 2x - 1' e 'f2(x) = 5x + 3'.}
+\NormalTok{f1 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \DecValTok{2}\OperatorTok{*}\NormalTok{x }\OperatorTok{-}\StringTok{ }\DecValTok{1}
+\NormalTok{\}}
+
+\NormalTok{f2 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \DecValTok{5}\OperatorTok{*}\NormalTok{x }\OperatorTok{+}\StringTok{ }\DecValTok{3}
+\NormalTok{\}}
+
+\NormalTok{##  A desigualdade é 'f1(x) >= f2(x)' logo 'f1(x) - f2(x) >= 0'. Logo queremos}
+\NormalTok{## os valores de x para os quais 'f1(x) - f2(x)' seja maior que zero.}
+\NormalTok{##  Começaremos achando a raiz da expressão 'f1(x) - f2(x)'.}
+\NormalTok{##  A função abaixo utiliza iterações para achar a raiz em um intervalo}
+\NormalTok{## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir}
+\NormalTok{## grandes intervalos a um certo custo de tempo computacional (neste caso}
+\NormalTok{## razoável).}
+\NormalTok{r <-}\StringTok{ }\KeywordTok{uniroot}\NormalTok{(}\ControlFlowTok{function}\NormalTok{(x)\{}\KeywordTok{f1}\NormalTok{(x) }\OperatorTok{-}\StringTok{ }\KeywordTok{f2}\NormalTok{(x)\}, }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{))}\OperatorTok{$}\NormalTok{root}
+\NormalTok{r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -1.333333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  O resultado revela somente a raiz da função. No entanto queremos saber onde}
+\NormalTok{## se localizam os valores positivos e negativos da função.}
+\NormalTok{##  Chamaremos nessa etapa a expressão 'f1(x) - f2(x)' de 'g(x)'.}
+\NormalTok{g <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \KeywordTok{f1}\NormalTok{(x) }\OperatorTok{-}\StringTok{ }\KeywordTok{f2}\NormalTok{(x)}
+\NormalTok{\}}
+
+\NormalTok{##  Sabemos que a raiz da função 'g(x)' é -1.33, logo basta verificarmos os}
+\NormalTok{## valores ao redor da raiz.}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =}\NormalTok{ r }\OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{to =}\NormalTok{ r }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{by =} \FloatTok{0.1}\NormalTok{)}
+\KeywordTok{data.frame}\NormalTok{(x, }\KeywordTok{g}\NormalTok{(x))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             x          g.x.
+## 1  -1.8333333  1.500000e+00
+## 2  -1.7333333  1.200000e+00
+## 3  -1.6333333  9.000000e-01
+## 4  -1.5333333  6.000000e-01
+## 5  -1.4333333  3.000000e-01
+## 6  -1.3333333  1.776357e-15
+## 7  -1.2333333 -3.000000e-01
+## 8  -1.1333333 -6.000000e-01
+## 9  -1.0333333 -9.000000e-01
+## 10 -0.9333333 -1.200000e+00
+## 11 -0.8333333 -1.500000e+00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  Pode-se observar que para valores menores que -1.33, g(x) assume valores}
+\NormalTok{## positivos. Logo os valores de x que satisfazem a inequação são dados por}
+\NormalTok{## 'x <= -1.33' ou 'x <= -4/3'.}
+
+\CommentTok{# Exemplo Gráfico}
+
+\NormalTok{##  O gráfico a seguir representa f1(x), f2(x) e g(x). Observe que para valores}
+\NormalTok{## menores que -1.33 temos f1(x) > f2(x) e g(x) > 0, para x = -1.33 temos}
+\NormalTok{## f1(x) = f2(x) e g(x) = 0 e para valores maiores que -1.33 temos}
+\NormalTok{## f1(x) < f2(x) e g(x) < 0.}
+
+\NormalTok{##  Vetor para determinar a amplitude do eixo das abscissas:}
+\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(r }\OperatorTok{-}\StringTok{ }\DecValTok{2}\NormalTok{, r }\OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{)}
+
+\NormalTok{##  Determina  a amplitude do eixo das ordenadas:}
+\NormalTok{mini <-}\StringTok{ }\KeywordTok{min}\NormalTok{(}\KeywordTok{f1}\NormalTok{(v), }\KeywordTok{f2}\NormalTok{(v), }\KeywordTok{g}\NormalTok{(v))}
+\NormalTok{maxi <-}\StringTok{ }\KeywordTok{max}\NormalTok{(}\KeywordTok{f1}\NormalTok{(v), }\KeywordTok{f2}\NormalTok{(v), }\KeywordTok{g}\NormalTok{(v))}
+
+\NormalTok{##  Curvas:}
+\KeywordTok{curve}\NormalTok{(f1, }\DataTypeTok{from =}\NormalTok{ v[}\DecValTok{1}\NormalTok{], }\DataTypeTok{to =}\NormalTok{ v[}\DecValTok{2}\NormalTok{], }\DataTypeTok{xlim =}\NormalTok{ v, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(mini, maxi), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{,}
+  \DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{''}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{''}\NormalTok{,}
+  \DataTypeTok{main =} \StringTok{'Componentes da Inequação'}\NormalTok{)}
+\KeywordTok{curve}\NormalTok{(f2, }\DataTypeTok{from =}\NormalTok{ v[}\DecValTok{1}\NormalTok{], }\DataTypeTok{to =}\NormalTok{ v[}\DecValTok{2}\NormalTok{], }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{col =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{curve}\NormalTok{(g, }\DataTypeTok{from =}\NormalTok{ v[}\DecValTok{1}\NormalTok{], }\DataTypeTok{to =}\NormalTok{ v[}\DecValTok{2}\NormalTok{], }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{col =} \DecValTok{3}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+\NormalTok{##  Eixos:}
+\KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =}\NormalTok{ v[}\DecValTok{1}\NormalTok{], }\DataTypeTok{x1 =}\NormalTok{ v[}\DecValTok{2}\NormalTok{],}
+   \DataTypeTok{y0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
+\KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{x1 =} \DecValTok{0}\NormalTok{,}
+   \DataTypeTok{y0 =}\NormalTok{ mini, }\DataTypeTok{y1 =}\NormalTok{ maxi, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
+
+\NormalTok{##  Comprimento da reta vertical que passa pelo ponto de intersecção:}
+\NormalTok{const <-}\StringTok{ }\FloatTok{1.5}
+\NormalTok{minim <-}\StringTok{ }\KeywordTok{min}\NormalTok{(}\KeywordTok{f1}\NormalTok{(r), }\KeywordTok{f2}\NormalTok{(r), }\KeywordTok{g}\NormalTok{(r)) }\OperatorTok{-}\StringTok{ }\NormalTok{const}
+\NormalTok{maxim <-}\StringTok{ }\KeywordTok{max}\NormalTok{(}\KeywordTok{f1}\NormalTok{(r), }\KeywordTok{f2}\NormalTok{(r), }\KeywordTok{g}\NormalTok{(r)) }\OperatorTok{+}\StringTok{ }\NormalTok{const}
+
+\NormalTok{##  Reta vertical que passa pelo ponto de intersecção:}
+\KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =}\NormalTok{ r, }\DataTypeTok{x1 =}\NormalTok{ r,}
+     \DataTypeTok{y0 =}\NormalTok{ minim, }\DataTypeTok{y1 =}\NormalTok{ maxim, }\DataTypeTok{lwd =} \DecValTok{1}\NormalTok{)}
+
+\NormalTok{##  Enumeração dos eixos:}
+\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\KeywordTok{round}\NormalTok{(v[}\DecValTok{1}\NormalTok{]), }\KeywordTok{round}\NormalTok{(v[}\DecValTok{2}\NormalTok{]) }\OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DecValTok{1}\NormalTok{)),}
+ \DataTypeTok{hadj =} \OperatorTok{-}\FloatTok{0.25}\NormalTok{, }\DataTypeTok{padj =} \OperatorTok{-}\FloatTok{1.5}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{, }\DataTypeTok{cex.axis =} \FloatTok{0.7}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{4}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\KeywordTok{round}\NormalTok{(mini) }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{, }\KeywordTok{round}\NormalTok{(maxi) }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{)),}
+ \DataTypeTok{padj =} \OperatorTok{-}\DecValTok{1}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{, }\DataTypeTok{cex.axis =} \FloatTok{0.7}\NormalTok{)}
+
+\NormalTok{##  Legenda:}
+\KeywordTok{legend}\NormalTok{(r }\OperatorTok{+}\StringTok{ }\FloatTok{0.45}\NormalTok{, }\OperatorTok{-}\DecValTok{7}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\StringTok{'f1(x)'}\NormalTok{, }\StringTok{'f2(x)'}\NormalTok{, }\StringTok{'g(x)'}\NormalTok{),}
+   \DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{text.font =} \DecValTok{2}\NormalTok{)}
+
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(v[}\DecValTok{2}\NormalTok{], }\OperatorTok{-}\FloatTok{0.125}\NormalTok{, r), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{, maxi, maxim }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{),}
+ \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"x"}\NormalTok{, }\StringTok{"y"}\NormalTok{, }\StringTok{"-4/3"}\NormalTok{), }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+  \begin{center}\includegraphics{Calculo-1_files/figure-latex/unnamed-chunk-7-1} \end{center}
 \end{enumerate}
 
 \chapter{Sem Título}\label{sem-titulo}
