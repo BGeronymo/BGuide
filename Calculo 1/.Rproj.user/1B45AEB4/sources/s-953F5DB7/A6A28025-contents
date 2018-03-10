@@ -753,4 +753,75 @@ text(x = c(v[2], 0.125, r), y = c(-1, maxi, maxim + 1),
 
 ```
     
+    \ 
+    
+2. *(Página 10)* Estude o sinal da expressão.
+
+    a) $3x-1$
+    
+        i) $f(x) = 0$ (raiz):
+        
+        \begin{eqnarray}
+        3x-1 &=& 0 \nonumber \\
+        3x-1 \ \ (+1) &=& 0 \ \ (+1) \nonumber \\
+        3x &=& 1 \nonumber \\
+        \frac{3x}{3} &=& \frac{1}{3} \nonumber \\
+        x &=& \frac{1}{3} \nonumber
+        \end{eqnarray}
+        
+        ii) $f(x) < 0$:
+        
+        \begin{eqnarray}
+        3x-1 &<& 0 \nonumber \\
+        3x-1 \ \ (+1) &<& 0 \ \ (+1) \nonumber \\
+        3x &<& 1 \nonumber \\
+        \frac{3x}{3} &<& \frac{1}{3} \nonumber \\
+        x &<& \frac{1}{3} \nonumber
+        \end{eqnarray}
+        
+        iii) $f(x) > 0$:
+        
+        \begin{eqnarray}
+        3x-1 &>& 0 \nonumber \\
+        3x-1 \ \ (+1) &>& 0 \ \ (+1) \nonumber \\
+        3x &>& 1 \nonumber \\
+        \frac{3x}{3} &>& \frac{1}{3} \nonumber \\
+        x &>& \frac{1}{3} \nonumber
+        \end{eqnarray}
+        
+    \ 
+    
+    ```{r}
+    
+# Resolução no R
+
+##  Para estudar o sinal da expressão pelo R começaremos construindo a função:
+f <- function(x){
+  3*x - 1
+}
+
+##  Começaremos achando a raiz da expressão f(x) ou seja, os valores de x para
+## os quais f(x) = 0.
+##  A função abaixo utiliza iterações para achar a raiz em um intervalo
+## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir
+## grandes intervalos a um certo custo de tempo computacional (neste caso
+## razoável).
+r <- uniroot(f, c(-10, 10))$root
+r
+
+##  Logo para x = 1/3 temos f(x) = 0.
+##  Queremos saber também onde se localizam os valores positivos e negativos da
+## função. Para isso basta verificarmos os valores ao redor da raiz.
+x <- seq(from = r - 0.5, to = r + 0.5, by = 0.1)
+data.frame(x, f(x))
+
+##  Pode-se observar que para valores menores que 1/3, f(x) assume valores
+## negativos e para valores maiores que 1/3, f(x) assume valores positivos.
+
+##  Para uma visualização gráfica do problema consulte o Exercício 1 da Seção
+## 1.2.1 e tente reproduzir os gráficos para este problema. Caso encontre
+## dificuldades entre em contato através do meu e-mail:
+## geronymobruno@hotmail.com.
+
+```
     
