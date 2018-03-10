@@ -893,6 +893,131 @@ permanece a mesma (não é refletida).
 \end{Shaded}
 
   \begin{center}\includegraphics{Calculo-1_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+  ~
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \setcounter{enumii}{4}
+  \tightlist
+  \item
+    \(1-3x > 0\)
+  \end{enumerate}
+
+  \begin{eqnarray}
+  1-3x \ \ (-1) &>& 0 \ \ (-1) \nonumber \\
+  -3x &>& -1 \nonumber \\
+  \frac{-3x}{-3} &<& \frac{-1}{-3} \nonumber \\
+  x &<& \frac{1}{3} \nonumber
+  \end{eqnarray}
+
+  ~
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Resolução no R}
+
+\NormalTok{##  Para resolver a inequação pelo R consideraremos a seguinte expressão:}
+\NormalTok{## 'f(x) = 1 - 3x'.}
+\NormalTok{f <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \DecValTok{1} \OperatorTok{-}\StringTok{ }\DecValTok{3}\OperatorTok{*}\NormalTok{x}
+\NormalTok{\}}
+
+\NormalTok{##  A desigualdade é 'f(x) < 0'. Portanto queremos os valores de x para os quais}
+\NormalTok{## 'f(x)' seja menor que zero.}
+\NormalTok{##  Começaremos achando a raiz de 'f(x)'.}
+\NormalTok{##  A função abaixo utiliza iterações para achar a raiz em um intervalo}
+\NormalTok{## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir}
+\NormalTok{## grandes intervalos a um certo custo de tempo computacional (neste caso}
+\NormalTok{## razoável).}
+\NormalTok{r <-}\StringTok{ }\KeywordTok{uniroot}\NormalTok{(f, }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{))}\OperatorTok{$}\NormalTok{root}
+\NormalTok{r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3333333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  O resultado revela somente a raiz da função. No entanto queremos saber onde}
+\NormalTok{## se localizam os valores positivos e negativos da função.}
+\NormalTok{##  Sabemos que a raiz da função 'f(x)' é 1/3, logo basta verificarmos os}
+\NormalTok{## valores ao redor da raiz.}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =}\NormalTok{ r }\OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{to =}\NormalTok{ r }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{by =} \FloatTok{0.1}\NormalTok{)}
+\KeywordTok{data.frame}\NormalTok{(x, }\KeywordTok{f}\NormalTok{(x))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              x          f.x.
+## 1  -0.16666667  1.500000e+00
+## 2  -0.06666667  1.200000e+00
+## 3   0.03333333  9.000000e-01
+## 4   0.13333333  6.000000e-01
+## 5   0.23333333  3.000000e-01
+## 6   0.33333333 -7.105427e-15
+## 7   0.43333333 -3.000000e-01
+## 8   0.53333333 -6.000000e-01
+## 9   0.63333333 -9.000000e-01
+## 10  0.73333333 -1.200000e+00
+## 11  0.83333333 -1.500000e+00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  Pode-se observar que para valores menores que 1/3, f(x) assume valores}
+\NormalTok{## positivos. Logo os valores de x que satisfazem a inequação são dados por}
+\NormalTok{## 'x < 1/3'.}
+
+\CommentTok{# Exemplo Gráfico}
+
+\NormalTok{##  O gráfico a seguir representa f(x). Observe que para valores menores que 1/3}
+\NormalTok{## temos f(x) > 0, para x = 1/3 temos f(x) = 0 e para valores maiores que 1/3}
+\NormalTok{## temos f(x) < 0.}
+
+\NormalTok{##  Vetor para determinar a amplitude do eixo das abscissas:}
+\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(r }\OperatorTok{-}\StringTok{ }\DecValTok{2}\NormalTok{, r }\OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{)}
+
+\NormalTok{##  Determina  a amplitude do eixo das ordenadas:}
+\NormalTok{mini <-}\StringTok{ }\KeywordTok{min}\NormalTok{(}\KeywordTok{f}\NormalTok{(v))}
+\NormalTok{maxi <-}\StringTok{ }\KeywordTok{max}\NormalTok{(}\KeywordTok{f}\NormalTok{(v))}
+
+\NormalTok{##  Curvas:}
+\KeywordTok{curve}\NormalTok{(f, }\DataTypeTok{from =}\NormalTok{ v[}\DecValTok{1}\NormalTok{], }\DataTypeTok{to =}\NormalTok{ v[}\DecValTok{2}\NormalTok{], }\DataTypeTok{xlim =}\NormalTok{ v, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(mini, maxi), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{,}
+  \DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{''}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{''}\NormalTok{,}
+  \DataTypeTok{main =} \StringTok{'Componentes da Inequação (Seção 1.2.1 Ex.1e)'}\NormalTok{)}
+\NormalTok{##  Eixos:}
+\KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =}\NormalTok{ v[}\DecValTok{1}\NormalTok{], }\DataTypeTok{x1 =}\NormalTok{ v[}\DecValTok{2}\NormalTok{],}
+   \DataTypeTok{y0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
+\KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{x1 =} \DecValTok{0}\NormalTok{,}
+   \DataTypeTok{y0 =}\NormalTok{ mini, }\DataTypeTok{y1 =}\NormalTok{ maxi, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
+
+\NormalTok{##  Comprimento da reta vertical que passa pelo ponto de intersecção:}
+\NormalTok{const <-}\StringTok{ }\FloatTok{1.5}
+\NormalTok{minim <-}\StringTok{ }\KeywordTok{min}\NormalTok{(}\KeywordTok{f}\NormalTok{(r)) }\OperatorTok{-}\StringTok{ }\NormalTok{const}
+\NormalTok{maxim <-}\StringTok{ }\KeywordTok{max}\NormalTok{(}\KeywordTok{f}\NormalTok{(r)) }\OperatorTok{+}\StringTok{ }\NormalTok{const}
+
+\NormalTok{##  Reta vertical que passa pelo ponto de intersecção:}
+\KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =}\NormalTok{ r, }\DataTypeTok{x1 =}\NormalTok{ r,}
+     \DataTypeTok{y0 =}\NormalTok{ minim, }\DataTypeTok{y1 =}\NormalTok{ maxim, }\DataTypeTok{lwd =} \DecValTok{1}\NormalTok{)}
+
+\NormalTok{##  Enumeração dos eixos:}
+\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\KeywordTok{round}\NormalTok{(v[}\DecValTok{1}\NormalTok{]) }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{, }\KeywordTok{round}\NormalTok{(v[}\DecValTok{2}\NormalTok{]) }\OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DecValTok{1}\NormalTok{)),}
+ \DataTypeTok{hadj =} \OperatorTok{-}\FloatTok{0.25}\NormalTok{, }\DataTypeTok{padj =} \OperatorTok{-}\FloatTok{1.5}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{, }\DataTypeTok{cex.axis =} \FloatTok{0.7}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\KeywordTok{round}\NormalTok{(mini) }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{, }\KeywordTok{round}\NormalTok{(maxi) }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{)),}
+ \DataTypeTok{padj =} \DecValTok{1}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{, }\DataTypeTok{cex.axis =} \FloatTok{0.7}\NormalTok{)}
+
+\NormalTok{##  Adiciona componentes do gráfico:}
+\KeywordTok{legend}\NormalTok{(r }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DataTypeTok{col =} \DecValTok{1}\NormalTok{, }\StringTok{'f(x)'}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{text.font =} \DecValTok{2}\NormalTok{)}
+
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(v[}\DecValTok{2}\NormalTok{], }\FloatTok{0.125}\NormalTok{, r), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{, maxi, maxim }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{),}
+ \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"x"}\NormalTok{, }\StringTok{"y"}\NormalTok{, }\StringTok{"1/3"}\NormalTok{), }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)  }
+\end{Highlighting}
+\end{Shaded}
+
+  \begin{center}\includegraphics{Calculo-1_files/figure-latex/unnamed-chunk-9-1} \end{center}
 \end{enumerate}
 
 \chapter{Sem Título}\label{sem-titulo}

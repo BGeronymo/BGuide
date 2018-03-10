@@ -559,3 +559,95 @@ text(x = c(v[2], 0.125, r), y = c(-1, maxi, maxim + 1),
      labels = c("x", "y", "1"), font = 2)  
 
 ```
+
+    \ 
+    
+    e) $1-3x > 0$
+    
+    \begin{eqnarray}
+    1-3x \ \ (-1) &>& 0 \ \ (-1) \nonumber \\
+    -3x &>& -1 \nonumber \\
+    \frac{-3x}{-3} &<& \frac{-1}{-3} \nonumber \\
+    x &<& \frac{1}{3} \nonumber
+    \end{eqnarray}
+    
+    \ 
+    
+    ```{r include = TRUE}
+
+# Resolução no R
+
+##  Para resolver a inequação pelo R consideraremos a seguinte expressão:
+## 'f(x) = 1 - 3x'.
+f <- function(x){
+  1 - 3*x
+}
+
+##  A desigualdade é 'f(x) < 0'. Portanto queremos os valores de x para os quais
+## 'f(x)' seja menor que zero.
+##  Começaremos achando a raiz de 'f(x)'.
+##  A função abaixo utiliza iterações para achar a raiz em um intervalo
+## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir
+## grandes intervalos a um certo custo de tempo computacional (neste caso
+## razoável).
+r <- uniroot(f, c(-10, 10))$root
+r
+
+##  O resultado revela somente a raiz da função. No entanto queremos saber onde
+## se localizam os valores positivos e negativos da função.
+##  Sabemos que a raiz da função 'f(x)' é 1/3, logo basta verificarmos os
+## valores ao redor da raiz.
+x <- seq(from = r - 0.5, to = r + 0.5, by = 0.1)
+data.frame(x, f(x))
+
+##  Pode-se observar que para valores menores que 1/3, f(x) assume valores
+## positivos. Logo os valores de x que satisfazem a inequação são dados por
+## 'x < 1/3'.
+
+# Exemplo Gráfico
+
+##  O gráfico a seguir representa f(x). Observe que para valores menores que 1/3
+## temos f(x) > 0, para x = 1/3 temos f(x) = 0 e para valores maiores que 1/3
+## temos f(x) < 0.
+
+##  Vetor para determinar a amplitude do eixo das abscissas:
+v <- c(r - 2, r + 2)
+
+##  Determina  a amplitude do eixo das ordenadas:
+mini <- min(f(v))
+maxi <- max(f(v))
+
+##  Curvas:
+curve(f, from = v[1], to = v[2], xlim = v, ylim = c(mini, maxi), lwd = 2,
+      bty = 'n', xaxt = 'n', yaxt = 'n', ylab = '', xlab = '',
+      main = 'Componentes da Inequação (Seção 1.2.1 Ex.1e)')
+##  Eixos:
+arrows(x0 = v[1], x1 = v[2],
+       y0 = 0, y1 = 0, lwd = 2, length = 0.1)
+arrows(x0 = 0, x1 = 0,
+       y0 = mini, y1 = maxi, lwd = 2, length = 0.1)
+
+##  Comprimento da reta vertical que passa pelo ponto de intersecção:
+const <- 1.5
+minim <- min(f(r)) - const
+maxim <- max(f(r)) + const
+
+##  Reta vertical que passa pelo ponto de intersecção:
+segments(x0 = r, x1 = r,
+         y0 = minim, y1 = maxim, lwd = 1)
+
+##  Enumeração dos eixos:
+axis(side = 1, c(seq(round(v[1]) + 1, round(v[2]) - 0.5, 1)),
+     hadj = -0.25, padj = -1.5, pos = 0, cex.axis = 0.7)
+axis(side = 2, c(seq(round(mini) + 1, round(maxi) - 1, 3)),
+     padj = 1, pos = 0, cex.axis = 0.7)
+
+##  Adiciona componentes do gráfico:
+legend(r + 0.5, 4, col = 1, 'f(x)', lwd = 2, text.font = 2)
+
+text(x = c(v[2], 0.125, r), y = c(-1, maxi, maxim + 1),
+     labels = c("x", "y", "1/3"), font = 2)  
+
+```
+    
+    
