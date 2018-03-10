@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3037153551",
+    "hash" : "1374990486",
     "id" : "A6A28025",
-    "lastKnownWriteTime" : 1520716674,
-    "last_content_update" : 1520716674965,
+    "lastKnownWriteTime" : 1520719001,
+    "last_content_update" : 1520719001166,
     "path" : "~/Área de Trabalho/Estatística UFPR/BGuide/Calculo 1/01-NumerosReais.Rmd",
     "project_path" : "01-NumerosReais.Rmd",
     "properties" : {
-        "cursorPosition" : "576,0",
-        "scrollLine" : "570"
+        "cursorPosition" : "554,19",
+        "scrollLine" : "543"
     },
     "relative_order" : 1,
     "source_on_save" : false,
