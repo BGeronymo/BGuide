@@ -86,3 +86,50 @@ legend(v[1] + 0.75, maxi, col = c(1, 2, 3), c('f1(x)', 'f2(x)', 'g(x)'),
 
 text(x = c(v[2], -0.125, r), y = c(-1, maxi, maxim + 1),
      labels = c("x", "y", "1.5"), font = 2)
+
+
+
+des <- function(f1 , f2, sent){
+  r <- uniroot(function(x){f1(x) - f2(x)}, c(-100, 100))$root
+  g <- function(x){
+    f1(x) - f2(x)
+  }
+  ab <- c(r - 1, r + 1)
+  if(sent == '>'){
+    if (g(ab)[1] > g(ab)[2]){
+      return(paste('x <', r)
+    } else {
+      return(paste('x >', r))
+    }
+  }
+  
+  if(sent == '>='){
+    if (g(ab)[1] > g(ab)[2]){
+      return(paste('x <=', r))
+    } else {
+      return(paste('x >=', r))
+    }
+  }
+  
+  if(sent == '<'){
+    if (g(ab)[1] > g(ab)[2]){
+      return(paste('x >', r))
+    } else {
+      return(paste('x <', r))
+    }
+  }
+  
+  if(sent == '<='){
+    if (g(ab)[1] > g(ab)[2]){
+      return(paste('x <=', r))
+    } else {
+      return(paste('x >=', r))
+    }
+  }
+}
+
+oi <- function(x){
+  return(x)
+}
+oi(1)
+oi(oi(1))

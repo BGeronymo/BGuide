@@ -60,7 +60,7 @@ sum(x^2 <= y^2)
 
 \ 
 
-**EXEMPLO 9.** *(Página 10)* Resolva a inequação $\frac{3x-1}{x+2} \geqslant 5$.
+**EXEMPLO 9.** *(Página 9)* Resolva a inequação $\frac{3x-1}{x+2} \geqslant 5$.
 
 Sendo $x < 2$:
 
@@ -134,7 +134,7 @@ text(y = 0, x = (pontos[2, 1] + pontos[4, 1])/2,
 
 ### Exercícios Resolvidos
 
-1. Resolva a inequação.
+1. *(Página 10)* Resolva a inequação.
 
     a) $3x+3 < x+6$
     
@@ -162,8 +162,8 @@ f2 <- function(x){
   x + 6
 }
 
-##  A desigualdade é 'f1(x) < f2(x)' logo 'f1(x) - f2(x) < 0'. Logo queremos os
-## valores de x para os quais 'f1(x) - f2(x)' seja menor que zero.
+##  A desigualdade é 'f1(x) < f2(x)' logo 'f1(x) - f2(x) < 0'. Portanto
+## queremos os valores de x para os quais 'f1(x) - f2(x)' seja menor que zero.
 ##  Começaremos achando a raiz da expressão 'f1(x) - f2(x)'.
 ##  A função abaixo utiliza iterações para achar a raiz em um intervalo
 ## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir
@@ -205,7 +205,7 @@ maxi <- max(f1(v), f2(v), g(v))
 ##  Curvas:
 curve(f1, from = v[1], to = v[2], xlim = v, ylim = c(mini, maxi), lwd = 2,
       bty = 'n', xaxt = 'n', yaxt = 'n', ylab = '', xlab = '',
-      main = 'Componentes da Inequação')
+      main = 'Componentes da Inequação (Seção 1.2.1 Ex.1a)')
 curve(f2, from = v[1], to = v[2], add = TRUE, col = 2, lwd = 2)
 curve(g, from = v[1], to = v[2], add = TRUE, col = 3, lwd = 2)
 
@@ -268,8 +268,8 @@ f2 <- function(x){
   3*x + 1
 }
 
-##  A desigualdade é 'f1(x) < f2(x)' logo 'f1(x) - f2(x) > 0'. Logo queremos os
-## valores de x para os quais 'f1(x) - f2(x)' seja maior que zero.
+##  A desigualdade é 'f1(x) < f2(x)' logo 'f1(x) - f2(x) > 0'. Portanto
+## queremos os valores de x para os quais 'f1(x) - f2(x)' seja maior que zero.
 ##  Começaremos achando a raiz da expressão 'f1(x) - f2(x)'.
 ##  A função abaixo utiliza iterações para achar a raiz em um intervalo
 ## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir
@@ -311,7 +311,7 @@ maxi <- max(f1(v), f2(v), g(v))
 ##  Curvas:
 curve(f1, from = v[1], to = v[2], xlim = v, ylim = c(mini, maxi), lwd = 2,
       bty = 'n', xaxt = 'n', yaxt = 'n', ylab = '', xlab = '',
-      main = 'Componentes da Inequação')
+      main = 'Componentes da Inequação (Seção 1.2.1 Ex.1b)')
 curve(f2, from = v[1], to = v[2], add = TRUE, col = 2, lwd = 2)
 curve(g, from = v[1], to = v[2], add = TRUE, col = 3, lwd = 2)
 
@@ -359,7 +359,7 @@ text(x = c(v[2], -0.125, r), y = c(-1, maxi, maxim + 1),
     x &\leqslant& -\frac{4}{3} \nonumber
     \end{eqnarray}
     
-    
+    \ 
     
     ```{r include = TRUE}
 
@@ -375,8 +375,9 @@ f2 <- function(x){
   5*x + 3
 }
 
-##  A desigualdade é 'f1(x) >= f2(x)' logo 'f1(x) - f2(x) >= 0'. Logo queremos
-## os valores de x para os quais 'f1(x) - f2(x)' seja maior que zero.
+##  A desigualdade é 'f1(x) >= f2(x)' logo 'f1(x) - f2(x) >= 0'. Portanto
+## queremos os valores de x para os quais 'f1(x) - f2(x)' seja maior ou igual a
+## zero.
 ##  Começaremos achando a raiz da expressão 'f1(x) - f2(x)'.
 ##  A função abaixo utiliza iterações para achar a raiz em um intervalo
 ## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir
@@ -418,7 +419,7 @@ maxi <- max(f1(v), f2(v), g(v))
 ##  Curvas:
 curve(f1, from = v[1], to = v[2], xlim = v, ylim = c(mini, maxi), lwd = 2,
       bty = 'n', xaxt = 'n', yaxt = 'n', ylab = '', xlab = '',
-      main = 'Componentes da Inequação')
+      main = 'Componentes da Inequação (Seção 1.2.1 Ex.1c)')
 curve(f2, from = v[1], to = v[2], add = TRUE, col = 2, lwd = 2)
 curve(g, from = v[1], to = v[2], add = TRUE, col = 3, lwd = 2)
 
@@ -449,5 +450,112 @@ legend(r + 0.45, -7, col = c(1, 2, 3), c('f1(x)', 'f2(x)', 'g(x)'),
 
 text(x = c(v[2], -0.125, r), y = c(-1, maxi, maxim + 1),
      labels = c("x", "y", "-4/3"), font = 2)
+
+```
+
+    \ 
+    
+    d) $x+3 \leqslant 6x-2$
+    
+    \begin{eqnarray}
+    x+3 \ \ (-x) &\leqslant& 6x-2 \ \ (-x) \nonumber \\
+    3 &\leqslant& 5x-2 \nonumber \\
+    3 \ \ (+2) &\leqslant& 5x-2 \ \ (+2) \nonumber \\
+    5 &\leqslant& 5x \nonumber \\
+    \frac{5}{5} &\leqslant& \frac{5x}{5} \nonumber \\
+    1 &\leqslant& x \nonumber \\
+    x &\geqslant& 1 \nonumber
+    \end{eqnarray}
+    
+    \ 
+
+    ```{r include = TRUE}
+    
+# Resolução no R
+
+##  Para resolver a inequação pelo R consideraremos as seguintes expressões:
+## 'f1(x) = x + 3' e 'f2(x) = 6x - 2'.
+f1 <- function(x){
+  x + 3
+}
+
+f2 <- function(x){
+  6*x - 2
+}
+
+##  A desigualdade é 'f1(x) <= f2(x)' logo 'f1(x) - f2(x) <= 0'. Portanto
+## queremos os valores de x para os quais 'f1(x) - f2(x)' seja menor ou igual a
+## zero.
+##  Começaremos achando a raiz da expressão 'f1(x) - f2(x)'.
+##  A função abaixo utiliza iterações para achar a raiz em um intervalo
+## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir
+## grandes intervalos a um certo custo de tempo computacional (neste caso
+## razoável).
+r <- uniroot(function(x){f1(x) - f2(x)}, c(-10, 10))$root
+r
+
+##  O resultado revela somente a raiz da função. No entanto queremos saber onde
+## se localizam os valores positivos e negativos da função.
+##  Chamaremos nessa etapa a expressão 'f1(x) - f2(x)' de 'g(x)'.
+g <- function(x){
+  f1(x) - f2(x)
+}
+
+##  Sabemos que a raiz da função 'g(x)' é 1, logo basta verificarmos os valores
+## ao redor da raiz.
+x <- seq(from = r - 0.5, to = r + 0.5, by = 0.1)
+data.frame(x, g(x))
+
+##  Pode-se observar que para valores maiores que 1, g(x) assume valores
+## negativos. Logo os valores de x que satisfazem a inequação são dados por
+## 'x >= 1'.
+
+# Exemplo Gráfico
+
+##  O gráfico a seguir representa f1(x), f2(x) e g(x). Observe que para valores
+## menores que 1 temos f1(x) > f2(x) e g(x) > 0, para x = 1 temos f1(x) = f2(x)
+## e g(x) = 0 e para valores maiores que 1 temos f1(x) < f2(x) e g(x) < 0.
+
+##  Vetor para determinar a amplitude do eixo das abscissas:
+v <- c(r - 2, r + 2)
+
+##  Determina  a amplitude do eixo das ordenadas:
+mini <- min(f1(v), f2(v), g(v))
+maxi <- max(f1(v), f2(v), g(v))
+
+##  Curvas:
+curve(f1, from = v[1], to = v[2], xlim = v, ylim = c(mini, maxi), lwd = 2,
+      bty = 'n', xaxt = 'n', yaxt = 'n', ylab = '', xlab = '',
+      main = 'Componentes da Inequação (Seção 1.2.1 Ex.1d)')
+curve(f2, from = v[1], to = v[2], add = TRUE, col = 2, lwd = 2)
+curve(g, from = v[1], to = v[2], add = TRUE, col = 3, lwd = 2)
+
+##  Eixos:
+arrows(x0 = v[1], x1 = v[2],
+       y0 = 0, y1 = 0, lwd = 2, length = 0.1)
+arrows(x0 = 0, x1 = 0,
+       y0 = mini, y1 = maxi, lwd = 2, length = 0.1)
+
+##  Comprimento da reta vertical que passa pelo ponto de intersecção:
+const <- 1.5
+minim <- min(f1(r), f2(r), g(r)) - const
+maxim <- max(f1(r), f2(r), g(r)) + const
+
+##  Reta vertical que passa pelo ponto de intersecção:
+segments(x0 = r, x1 = r,
+         y0 = minim, y1 = maxim, lwd = 1)
+
+##  Enumeração dos eixos:
+axis(side = 1, c(seq(round(v[1]), round(v[2]) - 0.5, 1)),
+     hadj = -0.25, padj = -1.5, pos = 0, cex.axis = 0.7)
+axis(side = 2, c(seq(round(mini) + 1, round(maxi) - 1, 4)),
+     padj = 1, pos = 0, cex.axis = 0.7)
+
+##  Legenda:
+legend(r - 0.75, 15, col = c(1, 2, 3), c('f1(x)', 'f2(x)', 'g(x)'),
+       lwd = 2, text.font = 2)
+
+text(x = c(v[2], 0.125, r), y = c(-1, maxi, maxim + 1),
+     labels = c("x", "y", "1"), font = 2)  
 
 ```
