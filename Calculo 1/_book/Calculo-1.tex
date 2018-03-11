@@ -1393,6 +1393,125 @@ permanece a mesma (não é refletida).
 \NormalTok{## geronymobruno@hotmail.com.}
 \end{Highlighting}
 \end{Shaded}
+
+  ~
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \setcounter{enumii}{2}
+  \item
+    \(2-3x\)
+
+    \begin{enumerate}
+    \def\labelenumiii{\roman{enumiii})}
+    \tightlist
+    \item
+      \(f(x) = 0\) (raiz):
+    \end{enumerate}
+
+    \begin{eqnarray}
+    2-3x &=& 0 \nonumber \\
+    2-3x \ \ (-2) &=& 0 \ \ (-2) \nonumber \\
+    -3x &=& -2 \nonumber \\
+    \frac{-3x}{-3} &=& \frac{-2}{-3} \nonumber \\
+    x &=& \frac{2}{3} \nonumber
+    \end{eqnarray}
+
+    \begin{enumerate}
+    \def\labelenumiii{\roman{enumiii})}
+    \setcounter{enumiii}{1}
+    \tightlist
+    \item
+      \(f(x) < 0\):
+    \end{enumerate}
+
+    \begin{eqnarray}
+    2-3x &<& 0 \nonumber \\
+    2-3x \ \ (-2) &<& 0 \ \ (-2) \nonumber \\
+    -3x &<& -2 \nonumber \\
+    \frac{-3x}{-3} &>& \frac{-2}{-3} \nonumber \\
+    x &>& \frac{2}{3} \nonumber
+    \end{eqnarray}
+
+    \begin{enumerate}
+    \def\labelenumiii{\roman{enumiii})}
+    \setcounter{enumiii}{2}
+    \tightlist
+    \item
+      \(f(x) > 0\):
+    \end{enumerate}
+
+    \begin{eqnarray}
+    2-3x &>& 0 \nonumber \\
+    2-3x \ \ (-2) &>& 0 \ \ (-2) \nonumber \\
+    -3x &>& -2 \nonumber \\
+    \frac{-3x}{-3} &<& \frac{-2}{-3} \nonumber \\
+    x &<& \frac{2}{3} \nonumber
+    \end{eqnarray}
+  \end{enumerate}
+
+  ~
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Resolução no R}
+
+\NormalTok{##  Para estudar o sinal da expressão pelo R começaremos construindo a função:}
+\NormalTok{f <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \DecValTok{2} \OperatorTok{-}\StringTok{ }\DecValTok{3}\OperatorTok{*}\NormalTok{x}
+\NormalTok{\}}
+
+\NormalTok{##  Começaremos achando a raiz da expressão f(x) ou seja, os valores de x para}
+\NormalTok{## os quais f(x) = 0.}
+\NormalTok{##  A função abaixo utiliza iterações para achar a raiz em um intervalo}
+\NormalTok{## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir}
+\NormalTok{## grandes intervalos a um certo custo de tempo computacional (neste caso}
+\NormalTok{## razoável).}
+\NormalTok{r <-}\StringTok{ }\KeywordTok{uniroot}\NormalTok{(f, }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{))}\OperatorTok{$}\NormalTok{root}
+\NormalTok{r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.6666667
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  Logo para x = 2/3 temos f(x) = 0.}
+\NormalTok{##  Queremos saber também onde se localizam os valores positivos e negativos da}
+\NormalTok{## função. Para isso basta verificarmos os valores ao redor da raiz.}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =}\NormalTok{ r }\OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{to =}\NormalTok{ r }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{by =} \FloatTok{0.1}\NormalTok{)}
+\KeywordTok{data.frame}\NormalTok{(x, }\KeywordTok{f}\NormalTok{(x))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            x          f.x.
+## 1  0.1666667  1.500000e+00
+## 2  0.2666667  1.200000e+00
+## 3  0.3666667  9.000000e-01
+## 4  0.4666667  6.000000e-01
+## 5  0.5666667  3.000000e-01
+## 6  0.6666667  1.776357e-15
+## 7  0.7666667 -3.000000e-01
+## 8  0.8666667 -6.000000e-01
+## 9  0.9666667 -9.000000e-01
+## 10 1.0666667 -1.200000e+00
+## 11 1.1666667 -1.500000e+00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  Pode-se observar que para valores menores que 2/3, f(x) assume valores}
+\NormalTok{## positivos e para valores maiores que 2/3, f(x) assume valores negativos.}
+
+\NormalTok{##  Para uma visualização gráfica do problema consulte o Exercício 1 da Seção}
+\NormalTok{## 1.2.1 e tente reproduzir os gráficos para este problema. Caso encontre}
+\NormalTok{## dificuldades entre em contato através do meu e-mail:}
+\NormalTok{## geronymobruno@hotmail.com.}
+\end{Highlighting}
+\end{Shaded}
 \end{enumerate}
 
 \chapter{Sem Título}\label{sem-titulo}
