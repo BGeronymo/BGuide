@@ -2,7 +2,7 @@
 
 ##  Para estudar o sinal da expressão pelo R começaremos construindo a função:
 f <- function(x){
-  2 - 3*x
+  5*x + 1
 }
 
 ##  Começaremos achando a raiz da expressão f(x) ou seja, os valores de x para
@@ -14,14 +14,14 @@ f <- function(x){
 r <- uniroot(f, c(-10, 10))$root
 r
 
-##  Logo para x = 2/3 temos f(x) = 0.
+##  Logo para x = -1/5 temos f(x) = 0.
 ##  Queremos saber também onde se localizam os valores positivos e negativos da
 ## função. Para isso basta verificarmos os valores ao redor da raiz.
-x <- seq(from = r - 0.5, to = r + 0.5, by = 0.1)
+x <- seq(from = r - 0.5, to = r + 0.5, by = 0.25)
 data.frame(x, f(x))
 
-##  Pode-se observar que para valores menores que 2/3, f(x) assume valores
-## positivos e para valores maiores que 2/3, f(x) assume valores negativos.
+##  Pode-se observar que para valores menores que -1/5, f(x) assume valores
+## negativos e para valores maiores que -1/5, f(x) assume valores positivos.
 
 ##  Para uma visualização gráfica do problema consulte o Exercício 1 da Seção
 ## 1.2.1 e tente reproduzir os gráficos para este problema. Caso encontre
