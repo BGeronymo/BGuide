@@ -1571,6 +1571,259 @@ permanece a mesma (não é refletida).
 \NormalTok{## geronymobruno@hotmail.com.}
 \end{Highlighting}
 \end{Shaded}
+
+  ~
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \setcounter{enumii}{4}
+  \item
+    \(\frac{x-1}{x-2}\)
+
+    \begin{enumerate}
+    \def\labelenumiii{\roman{enumiii})}
+    \item
+      \(f(x) = x-1\)
+
+      \begin{enumerate}
+      \def\labelenumiv{\Roman{enumiv})}
+      \tightlist
+      \item
+        \(f(x) = 0\) (raiz):
+      \end{enumerate}
+
+      \begin{eqnarray}
+      x-1 &=& 0 \nonumber \\
+      x-1 \ \ (+1) &=& 0 \ \ (+1) \nonumber \\
+      x &=& 1 \nonumber
+      \end{eqnarray}
+
+      \begin{enumerate}
+      \def\labelenumiv{\Roman{enumiv})}
+      \setcounter{enumiv}{1}
+      \tightlist
+      \item
+        \(f(x) < 0\):
+      \end{enumerate}
+
+      \begin{eqnarray}
+      x-1 &<& 0 \nonumber \\
+      x-1 \ \ (+1) &<& 0 \ \ (+1) \nonumber \\
+      x &<& 1 \nonumber
+      \end{eqnarray}
+
+      \begin{enumerate}
+      \def\labelenumiv{\Roman{enumiv})}
+      \setcounter{enumiv}{2}
+      \tightlist
+      \item
+        \(f(x) > 0\):
+      \end{enumerate}
+
+      \begin{eqnarray}
+      x-1 &>& 0 \nonumber \\
+      x-1 \ \ (+1) &>& 0 \ \ (+1) \nonumber \\
+      x &>& 1 \nonumber
+      \end{eqnarray}
+    \item
+      \(g(x) = x-2\)
+
+      \begin{enumerate}
+      \def\labelenumiv{\Roman{enumiv})}
+      \tightlist
+      \item
+        \(g(x) = 0\) (raiz):
+      \end{enumerate}
+
+      \begin{eqnarray}
+      x-2 &=& 0 \nonumber \\
+      x-2 \ \ (+2) &=& 0 \ \ (+2) \nonumber \\
+      x &=& 2 \nonumber
+      \end{eqnarray}
+
+      \begin{enumerate}
+      \def\labelenumiv{\Roman{enumiv})}
+      \setcounter{enumiv}{1}
+      \tightlist
+      \item
+        \(g(x) < 0\):
+      \end{enumerate}
+
+      \begin{eqnarray}
+      x-2 &<& 0 \nonumber \\
+      x-2 \ \ (+2) &<& 0 \ \ (+2) \nonumber \\
+      x &<& 2 \nonumber
+      \end{eqnarray}
+
+      \begin{enumerate}
+      \def\labelenumiv{\Roman{enumiv})}
+      \setcounter{enumiv}{2}
+      \tightlist
+      \item
+        \(g(x) > 0\):
+      \end{enumerate}
+
+      \begin{eqnarray}
+      x-2 &>& 0 \nonumber \\
+      x-2 \ \ (+2) &>& 0 \ \ (+2) \nonumber \\
+      x &>& 2 \nonumber
+      \end{eqnarray}
+    \item
+      \(h(x) = \frac{f(x)}{g(x)}\)
+    \end{enumerate}
+
+    \begin{table}[h]
+    \centering
+    \label{my-label}
+    \begin{tabular}{cc|c|c}
+                                & $x < 1$ & $1 < x < 2$ & $x > 2$                 \\
+    \multicolumn{1}{c|}{$f(x)$} & -       & +           & \multicolumn{1}{c|}{+}  \\
+    \multicolumn{1}{c|}{$g(x)$} & -       & -           & \multicolumn{1}{c|}{+}  \\
+    \multicolumn{1}{c|}{$h(x)$} & +       & -           & \multicolumn{1}{c|}{+}
+    \end{tabular}
+    \end{table}
+
+    Nosso interesse aqui é em \(h(x)\), podemos concluir com os
+    resultados de i, ii e iii que temos \(h(x) < 0\) para \(1 < x < 2\),
+    \(h(x) = 0\) para \(x = 1\), \(h(x) > 0\) para \(x < 1\) e
+    \(x > 2\). Temos ainda que para \(x = 2\) a função \(h(x)\) não é
+    definida pois o denominador da função iguala-se a zero.
+
+    ~
+  \end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Resolução no R}
+
+\NormalTok{##  Para resolver a inequação pelo R consideraremos as seguintes expressões:}
+\NormalTok{## 'f(x) = x - 1' e 'g(x) = x - 2'.}
+\NormalTok{f <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  x }\OperatorTok{-}\StringTok{ }\DecValTok{1}
+\NormalTok{\}}
+
+\NormalTok{g <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  x }\OperatorTok{-}\StringTok{ }\DecValTok{2}
+\NormalTok{\}}
+
+\NormalTok{##  Começaremos achando a raiz das expressões f(x) e g(x) ou seja, os valores de}
+\NormalTok{## x para os quais f(x) = 0.}
+\NormalTok{##  A função abaixo utiliza iterações para achar a raiz em um intervalo}
+\NormalTok{## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir}
+\NormalTok{## grandes intervalos a um certo custo de tempo computacional (neste caso}
+\NormalTok{## razoável).}
+\NormalTok{rf <-}\StringTok{ }\KeywordTok{uniroot}\NormalTok{(f, }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{))}\OperatorTok{$}\NormalTok{root}
+\NormalTok{rf}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rg <-}\StringTok{ }\KeywordTok{uniroot}\NormalTok{(g, }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{))}\OperatorTok{$}\NormalTok{root}
+\NormalTok{rg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  O resultado revela somente a raiz das funções f(x) e g(x). No entanto}
+\NormalTok{## queremos saber onde se localizam os valores positivos e negativos das}
+\NormalTok{## funções.}
+
+\NormalTok{##  Sabemos que as raízes das funções f(x) e g(x) são, respectivamente, 1 e 2.}
+\NormalTok{## Agora verificaremos os valores ao redor das raízes.}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =} \KeywordTok{min}\NormalTok{(rf, rg) }\OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{to =} \KeywordTok{max}\NormalTok{(rf, rg) }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{by =} \FloatTok{0.5}\NormalTok{)}
+\KeywordTok{data.frame}\NormalTok{(x, }\KeywordTok{f}\NormalTok{(x), }\KeywordTok{g}\NormalTok{(x), }\KeywordTok{f}\NormalTok{(x)}\OperatorTok{/}\KeywordTok{g}\NormalTok{(x))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     x          f.x.          g.x.     f.x..g.x.
+## 1 0.5 -5.000000e-01 -1.500000e+00  3.333333e-01
+## 2 1.0  1.776357e-15 -1.000000e+00 -1.776357e-15
+## 3 1.5  5.000000e-01 -5.000000e-01 -1.000000e+00
+## 4 2.0  1.000000e+00  1.776357e-15  5.629500e+14
+## 5 2.5  1.500000e+00  5.000000e-01  3.000000e+00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  Nosso interesse aqui é em f(x)/g(x), podemos concluir com o resultado acima}
+\NormalTok{## que valores menores que 1 e maiores que 2 temos f(x)/g(x) > 0, e para valores}
+\NormalTok{## maiores que 1 e menores que 2 temos f(x)/g(x) < 0 e para x = 1 temos}
+\NormalTok{## f(x)/g(x) = 0. Por definição, quando g(x) = 0 (x = 2) a expressão não é}
+\NormalTok{## definida.}
+
+\CommentTok{# Exemplo Gráfico}
+
+\NormalTok{##  O gráfico a seguir representa f(x), g(x) e h(x). Observe que para valores}
+\NormalTok{## menores que 1 temos f1(x) > f2(x) e g(x) > 0, para x = 1 temos f1(x) = f2(x)}
+\NormalTok{## e g(x) = 0 e para valores maiores que 1 temos f1(x) < f2(x) e g(x) < 0.}
+
+\NormalTok{##  Vetor para determinar a amplitude do eixo das abscissas:}
+\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{min}\NormalTok{(rf, rg) }\OperatorTok{-}\StringTok{ }\DecValTok{2}\NormalTok{, }\KeywordTok{max}\NormalTok{(rf, rg) }\OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{)}
+
+\NormalTok{##  Define função h(x):}
+\NormalTok{h <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \KeywordTok{f}\NormalTok{(x)}\OperatorTok{/}\KeywordTok{g}\NormalTok{(x)}
+\NormalTok{\}}
+\NormalTok{##  Determina  a amplitude do eixo das ordenadas:}
+\NormalTok{mini <-}\StringTok{ }\KeywordTok{min}\NormalTok{(}\KeywordTok{f}\NormalTok{(v), }\KeywordTok{g}\NormalTok{(v), }\KeywordTok{h}\NormalTok{(v))}
+\NormalTok{maxi <-}\StringTok{ }\KeywordTok{max}\NormalTok{(}\KeywordTok{f}\NormalTok{(v), }\KeywordTok{g}\NormalTok{(v), }\KeywordTok{h}\NormalTok{(v))}
+
+\NormalTok{##  Curvas:}
+\KeywordTok{curve}\NormalTok{(f, }\DataTypeTok{from =}\NormalTok{ v[}\DecValTok{1}\NormalTok{], }\DataTypeTok{to =}\NormalTok{ v[}\DecValTok{2}\NormalTok{], }\DataTypeTok{xlim =}\NormalTok{ v, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(mini, maxi), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{,}
+  \DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{''}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{''}\NormalTok{,}
+  \DataTypeTok{main =} \StringTok{'Componentes da Inequação (Seção 1.2.1 Ex.2e)'}\NormalTok{)}
+\KeywordTok{curve}\NormalTok{(g, }\DataTypeTok{from =}\NormalTok{ v[}\DecValTok{1}\NormalTok{], }\DataTypeTok{to =}\NormalTok{ v[}\DecValTok{2}\NormalTok{], }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{col =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{curve}\NormalTok{(h, }\DataTypeTok{from =}\NormalTok{ v[}\DecValTok{1}\NormalTok{], }\DataTypeTok{to =}\NormalTok{ v[}\DecValTok{2}\NormalTok{], }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{col =} \DecValTok{3}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+\NormalTok{##  Eixos:}
+\KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =}\NormalTok{ v[}\DecValTok{1}\NormalTok{], }\DataTypeTok{x1 =}\NormalTok{ v[}\DecValTok{2}\NormalTok{],}
+   \DataTypeTok{y0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
+\KeywordTok{arrows}\NormalTok{(}\DataTypeTok{x0 =} \DecValTok{0}\NormalTok{, }\DataTypeTok{x1 =} \DecValTok{0}\NormalTok{,}
+   \DataTypeTok{y0 =}\NormalTok{ mini, }\DataTypeTok{y1 =}\NormalTok{ maxi, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.1}\NormalTok{)}
+
+\NormalTok{##  Reta vertical que passa pelo ponto de intersecção:}
+\KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \KeywordTok{c}\NormalTok{(rf, rg), }\DataTypeTok{x1 =} \KeywordTok{c}\NormalTok{(rf, rg),}
+     \DataTypeTok{y0 =} \OperatorTok{-}\DecValTok{2}\NormalTok{, }\DataTypeTok{y1 =} \DecValTok{2}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{1}\NormalTok{)}
+
+\NormalTok{##  Enumeração dos eixos:}
+\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\KeywordTok{round}\NormalTok{(v[}\DecValTok{1}\NormalTok{]), }\KeywordTok{round}\NormalTok{(v[}\DecValTok{2}\NormalTok{]) }\OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DecValTok{1}\NormalTok{)),}
+ \DataTypeTok{hadj =} \OperatorTok{-}\FloatTok{0.25}\NormalTok{, }\DataTypeTok{padj =} \OperatorTok{-}\FloatTok{1.5}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{, }\DataTypeTok{cex.axis =} \FloatTok{0.7}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\KeywordTok{round}\NormalTok{(mini) }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{, }\KeywordTok{round}\NormalTok{(maxi) }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{)),}
+ \DataTypeTok{padj =} \DecValTok{1}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{0}\NormalTok{, }\DataTypeTok{cex.axis =} \FloatTok{0.7}\NormalTok{)}
+
+\NormalTok{##  Legenda:}
+\KeywordTok{legend}\NormalTok{(}\FloatTok{2.25}\NormalTok{, }\OperatorTok{-}\DecValTok{1}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\StringTok{'f(x)'}\NormalTok{, }\StringTok{'g(x)'}\NormalTok{, }\StringTok{'h(x)'}\NormalTok{),}
+   \DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{text.font =} \DecValTok{2}\NormalTok{)}
+
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(v[}\DecValTok{2}\NormalTok{], }\FloatTok{0.125}\NormalTok{, rf, rg), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{, maxi, }\FloatTok{2.25}\NormalTok{, }\FloatTok{2.25}\NormalTok{),}
+ \DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"x"}\NormalTok{, }\StringTok{"y"}\NormalTok{, }\StringTok{"1"}\NormalTok{, }\StringTok{"2"}\NormalTok{), }\DataTypeTok{font =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+  \begin{center}\includegraphics{Calculo-1_files/figure-latex/unnamed-chunk-15-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  Repare no grafico acima que para valores de x menores que 1 temos f(x) < 0}
+\NormalTok{## e g(x) < 0 consequentemente h(x) > 0. Para x = 1 temos f(x) = 0 e g(x) < 0}
+\NormalTok{## consequentemente h(x) = 0. Para valores de x maiores que 1 e menores que 2}
+\NormalTok{## temos f(x) > 0 e g(x) < 0 consequentemente h(x) < 0. Para x = 2 temos}
+\NormalTok{## f(x) > 0 e g(x) = 0 consequentemente h(x) não é definida no ponto. Para}
+\NormalTok{## valores de x maiores que 2 temos f(x) > 0 e g(x) > 0 consequentemente}
+\NormalTok{## h(x) > 0.}
+\end{Highlighting}
+\end{Shaded}
 \end{enumerate}
 
 \chapter{Sem Título}\label{sem-titulo}

@@ -1143,7 +1143,165 @@ x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">fro
 ##  Para uma visualização gráfica do problema consulte o Exercício 1 da Seção
 ## 1.2.1 e tente reproduzir os gráficos para este problema. Caso encontre
 ## dificuldades entre em contato através do meu e-mail:
-## geronymobruno@hotmail.com.</code></pre></div></li>
+## geronymobruno@hotmail.com.</code></pre></div>
+<p> </p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\frac{x-1}{x-2}\)</span></p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(f(x) = x-1\)</span></p>
+<ol style="list-style-type: upper-roman">
+<li><span class="math inline">\(f(x) = 0\)</span> (raiz):</li>
+</ol>
+<span class="math display">\[\begin{eqnarray}
+x-1 &amp;=&amp; 0 \nonumber \\
+x-1 \ \ (+1) &amp;=&amp; 0 \ \ (+1) \nonumber \\
+x &amp;=&amp; 1 \nonumber
+\end{eqnarray}\]</span>
+<ol start="2" style="list-style-type: upper-roman">
+<li><span class="math inline">\(f(x) &lt; 0\)</span>:</li>
+</ol>
+<span class="math display">\[\begin{eqnarray}
+x-1 &amp;&lt;&amp; 0 \nonumber \\
+x-1 \ \ (+1) &amp;&lt;&amp; 0 \ \ (+1) \nonumber \\
+x &amp;&lt;&amp; 1 \nonumber
+\end{eqnarray}\]</span>
+<ol start="3" style="list-style-type: upper-roman">
+<li><span class="math inline">\(f(x) &gt; 0\)</span>:</li>
+</ol>
+<span class="math display">\[\begin{eqnarray}
+x-1 &amp;&gt;&amp; 0 \nonumber \\
+x-1 \ \ (+1) &amp;&gt;&amp; 0 \ \ (+1) \nonumber \\
+x &amp;&gt;&amp; 1 \nonumber
+\end{eqnarray}\]</span></li>
+<li><p><span class="math inline">\(g(x) = x-2\)</span></p>
+<ol style="list-style-type: upper-roman">
+<li><span class="math inline">\(g(x) = 0\)</span> (raiz):</li>
+</ol>
+<span class="math display">\[\begin{eqnarray}
+x-2 &amp;=&amp; 0 \nonumber \\
+x-2 \ \ (+2) &amp;=&amp; 0 \ \ (+2) \nonumber \\
+x &amp;=&amp; 2 \nonumber
+\end{eqnarray}\]</span>
+<ol start="2" style="list-style-type: upper-roman">
+<li><span class="math inline">\(g(x) &lt; 0\)</span>:</li>
+</ol>
+<span class="math display">\[\begin{eqnarray}
+x-2 &amp;&lt;&amp; 0 \nonumber \\
+x-2 \ \ (+2) &amp;&lt;&amp; 0 \ \ (+2) \nonumber \\
+x &amp;&lt;&amp; 2 \nonumber
+\end{eqnarray}\]</span>
+<ol start="3" style="list-style-type: upper-roman">
+<li><span class="math inline">\(g(x) &gt; 0\)</span>:</li>
+</ol>
+<span class="math display">\[\begin{eqnarray}
+x-2 &amp;&gt;&amp; 0 \nonumber \\
+x-2 \ \ (+2) &amp;&gt;&amp; 0 \ \ (+2) \nonumber \\
+x &amp;&gt;&amp; 2 \nonumber
+\end{eqnarray}\]</span></li>
+<li><p><span class="math inline">\(h(x) = \frac{f(x)}{g(x)}\)</span></p></li>
+</ol>
+
+<p>Nosso interesse aqui é em <span class="math inline">\(h(x)\)</span>, podemos concluir com os resultados de i, ii e iii que temos <span class="math inline">\(h(x) &lt; 0\)</span> para <span class="math inline">\(1 &lt; x &lt; 2\)</span>, <span class="math inline">\(h(x) = 0\)</span> para <span class="math inline">\(x = 1\)</span>, <span class="math inline">\(h(x) &gt; 0\)</span> para <span class="math inline">\(x &lt; 1\)</span> e <span class="math inline">\(x &gt; 2\)</span>. Temos ainda que para <span class="math inline">\(x = 2\)</span> a função <span class="math inline">\(h(x)\)</span> não é definida pois o denominador da função iguala-se a zero.</p>
+<p> </p></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Resolução no R</span>
+
+##  Para resolver a inequação pelo R consideraremos as seguintes expressões:
+## &#39;f(x) = x - 1&#39; e &#39;g(x) = x - 2&#39;.
+f &lt;-<span class="st"> </span><span class="cf">function</span>(x){
+  x <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
+}
+
+g &lt;-<span class="st"> </span><span class="cf">function</span>(x){
+  x <span class="op">-</span><span class="st"> </span><span class="dv">2</span>
+}
+
+##  Começaremos achando a raiz das expressões f(x) e g(x) ou seja, os valores de
+## x para os quais f(x) = 0.
+##  A função abaixo utiliza iterações para achar a raiz em um intervalo
+## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir
+## grandes intervalos a um certo custo de tempo computacional (neste caso
+## razoável).
+rf &lt;-<span class="st"> </span><span class="kw">uniroot</span>(f, <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))<span class="op">$</span>root
+rf</code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rg &lt;-<span class="st"> </span><span class="kw">uniroot</span>(g, <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))<span class="op">$</span>root
+rg</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##  O resultado revela somente a raiz das funções f(x) e g(x). No entanto
+## queremos saber onde se localizam os valores positivos e negativos das
+## funções.
+
+##  Sabemos que as raízes das funções f(x) e g(x) são, respectivamente, 1 e 2.
+## Agora verificaremos os valores ao redor das raízes.
+x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="kw">min</span>(rf, rg) <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dt">to =</span> <span class="kw">max</span>(rf, rg) <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dt">by =</span> <span class="fl">0.5</span>)
+<span class="kw">data.frame</span>(x, <span class="kw">f</span>(x), <span class="kw">g</span>(x), <span class="kw">f</span>(x)<span class="op">/</span><span class="kw">g</span>(x))</code></pre></div>
+<pre><code>##     x          f.x.          g.x.     f.x..g.x.
+## 1 0.5 -5.000000e-01 -1.500000e+00  3.333333e-01
+## 2 1.0  1.776357e-15 -1.000000e+00 -1.776357e-15
+## 3 1.5  5.000000e-01 -5.000000e-01 -1.000000e+00
+## 4 2.0  1.000000e+00  1.776357e-15  5.629500e+14
+## 5 2.5  1.500000e+00  5.000000e-01  3.000000e+00</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##  Nosso interesse aqui é em f(x)/g(x), podemos concluir com o resultado acima
+## que valores menores que 1 e maiores que 2 temos f(x)/g(x) &gt; 0, e para valores
+## maiores que 1 e menores que 2 temos f(x)/g(x) &lt; 0 e para x = 1 temos
+## f(x)/g(x) = 0. Por definição, quando g(x) = 0 (x = 2) a expressão não é
+## definida.
+
+<span class="co"># Exemplo Gráfico</span>
+
+##  O gráfico a seguir representa f(x), g(x) e h(x). Observe que para valores
+## menores que 1 temos f1(x) &gt; f2(x) e g(x) &gt; 0, para x = 1 temos f1(x) = f2(x)
+## e g(x) = 0 e para valores maiores que 1 temos f1(x) &lt; f2(x) e g(x) &lt; 0.
+
+##  Vetor para determinar a amplitude do eixo das abscissas:
+v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">min</span>(rf, rg) <span class="op">-</span><span class="st"> </span><span class="dv">2</span>, <span class="kw">max</span>(rf, rg) <span class="op">+</span><span class="st"> </span><span class="dv">2</span>)
+
+##  Define função h(x):
+h &lt;-<span class="st"> </span><span class="cf">function</span>(x){
+  <span class="kw">f</span>(x)<span class="op">/</span><span class="kw">g</span>(x)
+}
+##  Determina  a amplitude do eixo das ordenadas:
+mini &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw">f</span>(v), <span class="kw">g</span>(v), <span class="kw">h</span>(v))
+maxi &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw">f</span>(v), <span class="kw">g</span>(v), <span class="kw">h</span>(v))
+
+##  Curvas:
+<span class="kw">curve</span>(f, <span class="dt">from =</span> v[<span class="dv">1</span>], <span class="dt">to =</span> v[<span class="dv">2</span>], <span class="dt">xlim =</span> v, <span class="dt">ylim =</span> <span class="kw">c</span>(mini, maxi), <span class="dt">lwd =</span> <span class="dv">2</span>,
+  <span class="dt">bty =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;&#39;</span>, <span class="dt">xlab =</span> <span class="st">&#39;&#39;</span>,
+  <span class="dt">main =</span> <span class="st">&#39;Componentes da Inequação (Seção 1.2.1 Ex.2e)&#39;</span>)
+<span class="kw">curve</span>(g, <span class="dt">from =</span> v[<span class="dv">1</span>], <span class="dt">to =</span> v[<span class="dv">2</span>], <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">curve</span>(h, <span class="dt">from =</span> v[<span class="dv">1</span>], <span class="dt">to =</span> v[<span class="dv">2</span>], <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="dv">3</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)
+
+##  Eixos:
+<span class="kw">arrows</span>(<span class="dt">x0 =</span> v[<span class="dv">1</span>], <span class="dt">x1 =</span> v[<span class="dv">2</span>],
+   <span class="dt">y0 =</span> <span class="dv">0</span>, <span class="dt">y1 =</span> <span class="dv">0</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
+<span class="kw">arrows</span>(<span class="dt">x0 =</span> <span class="dv">0</span>, <span class="dt">x1 =</span> <span class="dv">0</span>,
+   <span class="dt">y0 =</span> mini, <span class="dt">y1 =</span> maxi, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">length =</span> <span class="fl">0.1</span>)
+
+##  Reta vertical que passa pelo ponto de intersecção:
+<span class="kw">segments</span>(<span class="dt">x0 =</span> <span class="kw">c</span>(rf, rg), <span class="dt">x1 =</span> <span class="kw">c</span>(rf, rg),
+     <span class="dt">y0 =</span> <span class="op">-</span><span class="dv">2</span>, <span class="dt">y1 =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">1</span>)
+
+##  Enumeração dos eixos:
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="kw">c</span>(<span class="kw">seq</span>(<span class="kw">round</span>(v[<span class="dv">1</span>]), <span class="kw">round</span>(v[<span class="dv">2</span>]) <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dv">1</span>)),
+ <span class="dt">hadj =</span> <span class="op">-</span><span class="fl">0.25</span>, <span class="dt">padj =</span> <span class="op">-</span><span class="fl">1.5</span>, <span class="dt">pos =</span> <span class="dv">0</span>, <span class="dt">cex.axis =</span> <span class="fl">0.7</span>)
+<span class="kw">axis</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="kw">c</span>(<span class="kw">seq</span>(<span class="kw">round</span>(mini) <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, <span class="kw">round</span>(maxi) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">3</span>)),
+ <span class="dt">padj =</span> <span class="dv">1</span>, <span class="dt">pos =</span> <span class="dv">0</span>, <span class="dt">cex.axis =</span> <span class="fl">0.7</span>)
+
+##  Legenda:
+<span class="kw">legend</span>(<span class="fl">2.25</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="st">&#39;f(x)&#39;</span>, <span class="st">&#39;g(x)&#39;</span>, <span class="st">&#39;h(x)&#39;</span>),
+   <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">text.font =</span> <span class="dv">2</span>)
+
+<span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(v[<span class="dv">2</span>], <span class="fl">0.125</span>, rf, rg), <span class="dt">y =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, maxi, <span class="fl">2.25</span>, <span class="fl">2.25</span>),
+ <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>), <span class="dt">font =</span> <span class="dv">2</span>)</code></pre></div>
+<p><img src="Calculo-1_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##  Repare no grafico acima que para valores de x menores que 1 temos f(x) &lt; 0
+## e g(x) &lt; 0 consequentemente h(x) &gt; 0. Para x = 1 temos f(x) = 0 e g(x) &lt; 0
+## consequentemente h(x) = 0. Para valores de x maiores que 1 e menores que 2
+## temos f(x) &gt; 0 e g(x) &lt; 0 consequentemente h(x) &lt; 0. Para x = 2 temos
+## f(x) &gt; 0 e g(x) = 0 consequentemente h(x) não é definida no ponto. Para
+## valores de x maiores que 2 temos f(x) &gt; 0 e g(x) &gt; 0 consequentemente
+## h(x) &gt; 0.</code></pre></div></li>
 </ol>
 
 </div>
