@@ -791,7 +791,7 @@ text(x = c(v[2], 0.125, r), y = c(-1, maxi, maxim + 1),
         
     \ 
     
-    ```{r}
+    ```{r include = TRUE}
     
 # Resolução no R
 
@@ -824,4 +824,75 @@ data.frame(x, f(x))
 ## geronymobruno@hotmail.com.
 
 ```
+    
+    \ 
+    
+    b) $3-x$
+    
+        i) $f(x) = 0$ (raiz):
+        
+        \begin{eqnarray}
+        3-x &=& 0 \nonumber \\
+        3-x \ \ (-3) &=& 0 \ \ (-3) \nonumber \\
+        -x &=& -3 \nonumber \\
+        \frac{-x}{-1} &=& \frac{-3}{-1} \nonumber \\
+        x &=& 3 \nonumber
+        \end{eqnarray}
+        
+        ii) $f(x) < 0$:
+        
+        \begin{eqnarray}
+        3-x &<& 0 \nonumber \\
+        3-x \ \ (-3) &<& 0 \ \ (-3) \nonumber \\
+        -x &<& -3 \nonumber \\
+        \frac{-x}{-1} &>& \frac{-3}{-1} \nonumber \\
+        x &>& 3 \nonumber
+        \end{eqnarray}
+        
+        iii) $f(x) > 0$:
+        
+        \begin{eqnarray}
+        3-x &>& 0 \nonumber \\
+        3-x \ \ (-3) &>& 0 \ \ (-3) \nonumber \\
+        -x &>& -3 \nonumber \\
+        \frac{-x}{-1} &<& \frac{-3}{-1} \nonumber \\
+        x &<& 3 \nonumber
+        \end{eqnarray}
+
+    \ 
+    
+    ```{r include = TRUE}
+
+# Resolução no R
+
+##  Para estudar o sinal da expressão pelo R começaremos construindo a função:
+f <- function(x){
+  3 - x
+}
+
+##  Começaremos achando a raiz da expressão f(x) ou seja, os valores de x para
+## os quais f(x) = 0.
+##  A função abaixo utiliza iterações para achar a raiz em um intervalo
+## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir
+## grandes intervalos a um certo custo de tempo computacional (neste caso
+## razoável).
+r <- uniroot(f, c(-10, 10))$root
+r
+
+##  Logo para x = 3 temos f(x) = 0.
+##  Queremos saber também onde se localizam os valores positivos e negativos da
+## função. Para isso basta verificarmos os valores ao redor da raiz.
+x <- seq(from = r - 0.5, to = r + 0.5, by = 0.1)
+data.frame(x, f(x))
+
+##  Pode-se observar que para valores menores que 3, f(x) assume valores
+## positivos e para valores maiores que 3, f(x) assume valores negativos.
+
+##  Para uma visualização gráfica do problema consulte o Exercício 1 da Seção
+## 1.2.1 e tente reproduzir os gráficos para este problema. Caso encontre
+## dificuldades entre em contato através do meu e-mail:
+## geronymobruno@hotmail.com.
+
+```
+    
     

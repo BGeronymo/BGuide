@@ -1274,6 +1274,125 @@ permanece a mesma (não é refletida).
 \NormalTok{## geronymobruno@hotmail.com.}
 \end{Highlighting}
 \end{Shaded}
+
+  ~
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \setcounter{enumii}{1}
+  \item
+    \(3-x\)
+
+    \begin{enumerate}
+    \def\labelenumiii{\roman{enumiii})}
+    \tightlist
+    \item
+      \(f(x) = 0\) (raiz):
+    \end{enumerate}
+
+    \begin{eqnarray}
+    3-x &=& 0 \nonumber \\
+    3-x \ \ (-3) &=& 0 \ \ (-3) \nonumber \\
+    -x &=& -3 \nonumber \\
+    \frac{-x}{-1} &=& \frac{-3}{-1} \nonumber \\
+    x &=& 3 \nonumber
+    \end{eqnarray}
+
+    \begin{enumerate}
+    \def\labelenumiii{\roman{enumiii})}
+    \setcounter{enumiii}{1}
+    \tightlist
+    \item
+      \(f(x) < 0\):
+    \end{enumerate}
+
+    \begin{eqnarray}
+    3-x &<& 0 \nonumber \\
+    3-x \ \ (-3) &<& 0 \ \ (-3) \nonumber \\
+    -x &<& -3 \nonumber \\
+    \frac{-x}{-1} &>& \frac{-3}{-1} \nonumber \\
+    x &>& 3 \nonumber
+    \end{eqnarray}
+
+    \begin{enumerate}
+    \def\labelenumiii{\roman{enumiii})}
+    \setcounter{enumiii}{2}
+    \tightlist
+    \item
+      \(f(x) > 0\):
+    \end{enumerate}
+
+    \begin{eqnarray}
+    3-x &>& 0 \nonumber \\
+    3-x \ \ (-3) &>& 0 \ \ (-3) \nonumber \\
+    -x &>& -3 \nonumber \\
+    \frac{-x}{-1} &<& \frac{-3}{-1} \nonumber \\
+    x &<& 3 \nonumber
+    \end{eqnarray}
+  \end{enumerate}
+
+  ~
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Resolução no R}
+
+\NormalTok{##  Para estudar o sinal da expressão pelo R começaremos construindo a função:}
+\NormalTok{f <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \DecValTok{3} \OperatorTok{-}\StringTok{ }\NormalTok{x}
+\NormalTok{\}}
+
+\NormalTok{##  Começaremos achando a raiz da expressão f(x) ou seja, os valores de x para}
+\NormalTok{## os quais f(x) = 0.}
+\NormalTok{##  A função abaixo utiliza iterações para achar a raiz em um intervalo}
+\NormalTok{## pré-determinado, utiliza-se aqui o intervalo (-10, 10) mas é possível inserir}
+\NormalTok{## grandes intervalos a um certo custo de tempo computacional (neste caso}
+\NormalTok{## razoável).}
+\NormalTok{r <-}\StringTok{ }\KeywordTok{uniroot}\NormalTok{(f, }\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{10}\NormalTok{, }\DecValTok{10}\NormalTok{))}\OperatorTok{$}\NormalTok{root}
+\NormalTok{r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  Logo para x = 3 temos f(x) = 0.}
+\NormalTok{##  Queremos saber também onde se localizam os valores positivos e negativos da}
+\NormalTok{## função. Para isso basta verificarmos os valores ao redor da raiz.}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =}\NormalTok{ r }\OperatorTok{-}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{to =}\NormalTok{ r }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{by =} \FloatTok{0.1}\NormalTok{)}
+\KeywordTok{data.frame}\NormalTok{(x, }\KeywordTok{f}\NormalTok{(x))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      x f.x.
+## 1  2.5  0.5
+## 2  2.6  0.4
+## 3  2.7  0.3
+## 4  2.8  0.2
+## 5  2.9  0.1
+## 6  3.0  0.0
+## 7  3.1 -0.1
+## 8  3.2 -0.2
+## 9  3.3 -0.3
+## 10 3.4 -0.4
+## 11 3.5 -0.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##  Pode-se observar que para valores menores que 3, f(x) assume valores}
+\NormalTok{## positivos e para valores maiores que 3, f(x) assume valores negativos.}
+
+\NormalTok{##  Para uma visualização gráfica do problema consulte o Exercício 1 da Seção}
+\NormalTok{## 1.2.1 e tente reproduzir os gráficos para este problema. Caso encontre}
+\NormalTok{## dificuldades entre em contato através do meu e-mail:}
+\NormalTok{## geronymobruno@hotmail.com.}
+\end{Highlighting}
+\end{Shaded}
 \end{enumerate}
 
 \chapter{Sem Título}\label{sem-titulo}
