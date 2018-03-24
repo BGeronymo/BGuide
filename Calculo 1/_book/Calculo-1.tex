@@ -124,7 +124,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2018-03-11}
+  \date{2018-03-24}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -135,6 +135,7 @@
 }
 \makeatother
 \usepackage[brazil]{babel}
+\usepackage{natbib}
 
 \begin{document}
 \maketitle
@@ -147,16 +148,22 @@
 \addcontentsline{toc}{chapter}{Prefácio}
 
 Este material trata-se de um manual de resoluções dos exercícios
-propostos no livro \emph{Um Curso de Cálculo, Volume 1, 5ª Edição} de
-\emph{Hamilton Luiz Guidorizzi}. Ao decorrer das resoluções o material
-busca apresentar, adicionalmente, resoluções computacionais através do
-software \href{https://www.r-project.org/}{R de computação estatística}
-para facilitar a visualização do problema e também o aprendizado da
-linguagem \emph{R}.
+propostos no livro \emph{Um Curso de Cálculo, Volume 1, 5ª Edição}
+desenvolvido por \citet{guidorizzi2013curso}. Ao decorrer das resoluções
+o material busca apresentar, adicionalmente, resoluções computacionais
+através do software \href{https://www.r-project.org/}{\citet{R-base} de
+computação estatística} para facilitar a visualização do problema e
+também o aprendizado da linguagem \emph{R}.
 
 O material procura abordar todos os assuntos tratados no livro do
 \emph{Guidorizzi}, seguindo também a mesma ordem dos capítulos, para
 facilitar a dinâmica de pesquisa por assuntos específicos.
+
+Para o desenvolvimento do material foi utilizado o pacote \emph{knitr}
+desenvolvido por \citet{R-knitr}, o \emph{rmarkdown} desenvolvido por
+\citet{R-rmarkdown} para geração de documentos dinâmicos no \emph{R} e o
+\emph{bookdown} desenvolvido por \citet{R-bookdown} para criar livros e
+documentos técnicos em \emph{R Markdown}.
 
 \chapter{Números reais}\label{numeros-reais}
 
@@ -1825,14 +1832,6 @@ permanece a mesma (não é refletida).
 \end{Highlighting}
 \end{Shaded}
 \end{enumerate}
-
-\chapter{Sem Título}\label{sem-titulo}
-
-\chapter{Sem Título}\label{sem-titulo-1}
-
-\chapter{Sem Título}\label{sem-titulo-2}
-
-\chapter{Sem Título}\label{sem-titulo-3}
 
 \bibliography{book.bib,packages.bib}
 
