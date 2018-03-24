@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "2273046831",
     "id" : "A6A28025",
-    "lastKnownWriteTime" : 1520796242,
-    "last_content_update" : 1520868069999,
+    "lastKnownWriteTime" : 1521931634,
+    "last_content_update" : 1521931634988,
     "path" : "~/Projetos/BGuide/Calculo 1/01-NumerosReais.Rmd",
     "project_path" : "01-NumerosReais.Rmd",
     "properties" : {
-        "cursorPosition" : "21,7",
-        "scrollLine" : "0"
+        "cursorPosition" : "304,8",
+        "scrollLine" : "289"
     },
     "relative_order" : 1,
     "source_on_save" : false,
