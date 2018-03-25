@@ -15,11 +15,11 @@ description: "O *BGuide - Cálculo 1* é um material de sintetização e resolu�
 # Prefácio {-}
 
 Este material trata-se de um manual de resoluções dos exercícios propostos no
-livro *Um Curso de Cálculo, Volume 1, 5ª Edição* desenvolvido por
-\citet{guidorizzi2013curso}. Ao decorrer das resoluções o material busca
-apresentar, adicionalmente, resoluções computacionais através do software
-[\citet{R-base} de computação estatística](https://www.r-project.org/) para facilitar
-a visualização do problema e também o aprendizado da linguagem *R*.
+livro *Um Curso de Cálculo, Volume 1, 5ª Edição* de \citet{guidorizzi2013curso}.
+Ao decorrer das resoluções o material busca apresentar, adicionalmente,
+resoluções computacionais através do software
+[\citet{R-base} de computação estatística](https://www.r-project.org/) para
+facilitar a visualização do problema e também o aprendizado da linguagem *R*.
 
 O material procura abordar todos os assuntos tratados no livro do *Guidorizzi*,
 seguindo também a mesma ordem dos capítulos, para facilitar a dinâmica de
