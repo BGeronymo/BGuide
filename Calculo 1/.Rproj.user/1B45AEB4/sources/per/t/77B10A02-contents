@@ -1,0 +1,53 @@
+f1 <- function(x){
+  x
+}
+
+f2 <- function(x){
+  -x
+}
+
+f3 <- function(x){
+  sqrt(1-x^2)
+}
+
+plot(f1, bty = 'n', xaxt = 'n', yaxt = 'n', ylab = '', xlab = '',
+     ylim = c(-5, 5),
+     xlim = c(-5, 5), pch = 20, cex = 2,
+     col = "red", lwd = 2)
+
+plot(f2, add = TRUE, xlim = c(-5, 5), col = "blue", lwd = 2)
+
+plot(f3, add = TRUE, xlim = c(0, 1), col = "red", lwd = 1)
+
+arrows(x0 = -5, x1 = 5,
+       y0 = 0, y1 = 0, lwd = 2, length = 0.1)
+
+arrows(x0 = 0, x1 = 0,
+       y0 = -5, y1 = 5, lwd = 2, length = 0.1)
+
+
+legend(-5, 1.5, col = c("red", "blue"), c('1ª bissetriz', '2ª bissetriz'),
+       lwd = 2, text.font = 2, cex = 0.7)
+
+text(x = c(5, -0.5), y = c(-0.5, 5),
+     labels = c("x", "y"), font = 2)
+
+text(x = c(4.5, -0.9), y = c(-1, 4.5),
+     labels = c("(abscissas)", "(ordenadas)"), font = 1, cex = 0.75)
+
+text(x = c(1.2, 0.5), y = c(0.5, 1.2),
+     labels = c("45°", "45°"), font = 2, col = "red", cex = 0.75)
+
+
+text(x = c(2, -2, -2, 2), y = c(3.5, 3.5, -3, -3),
+     labels = c("1° Quadrante", "2° Quadrante", "3° Quadrante", "4° Quadrante"), font = 1, cex = 0.75)
+
+text(x = c(2, -2, -2, 2), y = c(3, 3, -3.5, -3.5),
+     labels = c("( + ; + )", "( - ; + )", "( - ; - )", "( + ; - )"), font = 1, cex = 0.75)
+
+text(x = c(-2.5, 2.5), y = c(-0.5, -0.5),
+     labels = c("Semieixo negativo das abscissas", "Semieixo positivo das abscissas"), font = 2, cex = 0.75)
+
+text(x = c(-0.3, -0.3), y = c(2.5, -2.5),
+     labels = c("Semieixo positivo das ordenadas", "Semieixo negativo das ordenadas"), font = 2, cex = 0.75,
+     srt = 90)
